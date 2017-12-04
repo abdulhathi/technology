@@ -1,0 +1,28 @@
+
+  
+<div id="container">
+    <input type="text" [(ngModel)]="tech.Name" placeholder="Techology Name"><br><br>
+    <textarea [(ngModel)]="tech.Description" placeholder="Techology Description"
+    class="form-control" ></textarea><br>
+    <button (click)="AddTechnology()" class="btn btn-success">Save</button>
+<br>
+<br>
+<table class="table table-striped table-hover table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let technology of technologies">
+      <td>{{technology.Id}}</td>
+      <td>{{technology.Name}}</td>
+      <td>{{technology.Description}}</td>
+      <td><button (click)="DeleteTechnology(technology.Id)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+</div>
