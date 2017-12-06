@@ -117,12 +117,14 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__not_found_component__ = __webpack_require__("../../../../../src/app/not-found.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__app_route__ = __webpack_require__("../../../../../src/app/app.route.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__content_technology_add_technology_add_technology_component__ = __webpack_require__("../../../../../src/app/content/technology/add-technology/add-technology.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__content_learning_learning_component__ = __webpack_require__("../../../../../src/app/content/learning/learning.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -153,7 +155,8 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_12__content_technology_technology_component__["a" /* TechnologyComponent */],
                 __WEBPACK_IMPORTED_MODULE_13__content_concept_concept_component__["a" /* ConceptComponent */],
                 __WEBPACK_IMPORTED_MODULE_14__not_found_component__["a" /* PageNotFoundComponent */],
-                __WEBPACK_IMPORTED_MODULE_16__content_technology_add_technology_add_technology_component__["a" /* AddTechnologyComponent */]
+                __WEBPACK_IMPORTED_MODULE_16__content_technology_add_technology_add_technology_component__["a" /* AddTechnologyComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__content_learning_learning_component__["a" /* LearningComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -181,12 +184,15 @@ var AppModule = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Technology_Routes; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__content_technology_technology_component__ = __webpack_require__("../../../../../src/app/content/technology/technology.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__content_concept_concept_component__ = __webpack_require__("../../../../../src/app/content/concept/concept.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__content_learning_learning_component__ = __webpack_require__("../../../../../src/app/content/learning/learning.component.ts");
+
 
 
 var Technology_Routes = [
     { pathMatch: "full", path: "", component: __WEBPACK_IMPORTED_MODULE_0__content_technology_technology_component__["a" /* TechnologyComponent */] },
     { pathMatch: "full", path: "technology", component: __WEBPACK_IMPORTED_MODULE_0__content_technology_technology_component__["a" /* TechnologyComponent */] },
     { pathMatch: "full", path: "concept", component: __WEBPACK_IMPORTED_MODULE_1__content_concept_concept_component__["a" /* ConceptComponent */] },
+    { pathMatch: "full", path: "learning", component: __WEBPACK_IMPORTED_MODULE_2__content_learning_learning_component__["a" /* LearningComponent */] },
 ];
 
 
@@ -213,7 +219,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/content/concept/concept.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n    <table class=\"table\">\n        <tr>\n            <td>First Name :</td>\n            <td>{{FirstName}}</td>\n        </tr>\n        <tr>\n            <td>Last Name :</td>\n            <td>{{LastName}}</td>\n        </tr>\n        <tr>\n            <td>Age :</td>\n            <td>{{Age}}</td>\n        </tr>\n        <tr>\n            <td>Date of Birth :</td>\n            <td>{{DateOfBirth}}</td>\n        </tr>\n    </table>\n    <div>\n        <h2>Interpolation</h2>\n        interpolation property binding specified by the (OpenParanthesis CloseParanthesis) method <br />\n        Display full name of the above employee : {{GetFullName()}}\n    </div>\n    <div>\n        <h2>Property Binding</h2>\n        Property binding will be achived by the \"<b>[ ]</b>\" squar brackets.<br />\n        Canonical Property binding will be achived by the <b>bind-</b> with property name.<br />\n        <span [innerHTML]=\"MyHTML\"></span><br />\n        <span bind-innerHTML=\"MyHTML\"></span>\n    </div>\n    <div>\n        <h2>Attribute Binding</h2>\n        Attribute binding with <b>[ ] with attr.</b><br />\n        <table class=\"table\">\n            <tr>\n                <th [attr.colspan]=\"ColumnSpan\">\n                    Column Span 3\n                </th>\n            </tr>\n            <tr>\n                <td>Col 1</td>\n                <td>Col 2</td>\n                <td>Col 3</td>\n            </tr>\n        </table>\n        Attribute binding with <b>attr.property</b> and value paranthesis method<br />\n        <table class=\"table\">\n            <tr>\n                <th attr.colspan=\"{{ColumnSpan}}\">\n                    Column Span 3\n                </th>\n            </tr>\n            <tr>\n                <td>Col 1</td>\n                <td>Col 2</td>\n                <td>Col 3</td>\n            </tr>\n        </table>\n    </div> \n    <div width=\"200px\">\n        <h2>Class Binding</h2>\n        <div [class]=\"ClassesToApply\">Red Bold Italic class method</div><br />\n        <div [class.boldClass]=\"ApplyBoldClass\">Bold classes by boolean</div><br />\n        <div [ngClass]=\"addClasses()\">component method to apply classes</div>\n    </div><div>\n        <h2>Style Binding</h2>\n        <div [style.font-weight]=\"IsBold ? 'bold' : 'normal'\">style isbold boolean</div><br />\n        <div [style.font-size.px]=\"FontSize\">style FontSize boolean</div><br />\n        <div [ngStyle]=\"setStyles()\">style setStyles method</div><br />\n    </div>\n\n    <div>\n        <h2>Event</h2>\n        <table class=\"table\">\n            <thead>\n                <tr>\n                    <th attr.colspan=\"{{ColumnSpan}}\">\n                        Employee Details\n                    </th>\n                </tr>\n            </thead>\n            <tbody>\n                <tr>\n                    <td>First Name</td>\n                    <td>{{FirstName}}</td>\n                </tr>\n                <tr>\n                    <td>Last Name</td>\n                    <td>{{LastName}}</td>\n                </tr>\n                <tr *ngIf='ShowDetails'>\n                    <td>DateOfBirth</td>\n                    <td>{{DateOfBirth}}</td>\n                </tr>\n                <tr *ngIf='ShowDetails'>\n                    <td>Age</td>\n                    <td>{{Age}}</td>\n                </tr>\n            </tbody>\n        </table>\n\n        <input type=\"checkbox\" [checked]=\"ShowDetails\" (click)=\"btnOnClick()\" />\n        <button (click)=\"btnOnClick()\">\n        {{ShowDetails == false ? 'Show' : 'Hide'}}</button>\n    </div>\n\n    <div>\n        <h2>Two way data binding in Angular2 event targer value method</h2>\n        Input First Name  : <input type=\"text\" [value]=\"FirstName\" (input)=\"FirstName=$event.target.value\" /><br />\n        Output First Name : {{FirstName}}\n        <br />\n        <h2>Two way data binding in Angular2 import the forms module and using the ngModel property</h2>\n        Input First Name  : <input type=\"text\" [(ngModel)]=\"FirstName\" /><br />\n        Output First Name : {{FirstName}}\n    </div>\n</div>"
+module.exports = ""
 
 /***/ }),
 
@@ -308,6 +314,67 @@ var ContentComponent = (function () {
         __metadata("design:paramtypes", [])
     ], ContentComponent);
     return ContentComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/content/learning/learning.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/content/learning/learning.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <table class=\"table\">\n      <tr>\n          <td>First Name :</td>\n          <td>{{FirstName}}</td>\n      </tr>\n      <tr>\n          <td>Last Name :</td>\n          <td>{{LastName}}</td>\n      </tr>\n      <tr>\n          <td>Age :</td>\n          <td>{{Age}}</td>\n      </tr>\n      <tr>\n          <td>Date of Birth :</td>\n          <td>{{DateOfBirth}}</td>\n      </tr>\n  </table>\n  <div>\n      <h2>Interpolation</h2>\n      interpolation property binding specified by the (OpenParanthesis CloseParanthesis) method <br />\n      Display full name of the above employee : {{GetFullName()}}\n  </div>\n  <div>\n      <h2>Property Binding</h2>\n      Property binding will be achived by the \"<b>[ ]</b>\" squar brackets.<br />\n      Canonical Property binding will be achived by the <b>bind-</b> with property name.<br />\n      <span [innerHTML]=\"MyHTML\"></span><br />\n      <span bind-innerHTML=\"MyHTML\"></span>\n  </div>\n  <div>\n      <h2>Attribute Binding</h2>\n      Attribute binding with <b>[ ] with attr.</b><br />\n      <table class=\"table\">\n          <tr>\n              <th [attr.colspan]=\"ColumnSpan\">\n                  Column Span 3\n              </th>\n          </tr>\n          <tr>\n              <td>Col 1</td>\n              <td>Col 2</td>\n              <td>Col 3</td>\n          </tr>\n      </table>\n      Attribute binding with <b>attr.property</b> and value paranthesis method<br />\n      <table class=\"table\">\n          <tr>\n              <th attr.colspan=\"{{ColumnSpan}}\">\n                  Column Span 3\n              </th>\n          </tr>\n          <tr>\n              <td>Col 1</td>\n              <td>Col 2</td>\n              <td>Col 3</td>\n          </tr>\n      </table>\n  </div> \n  <div width=\"200px\">\n      <h2>Class Binding</h2>\n      <div [class]=\"ClassesToApply\">Red Bold Italic class method</div><br />\n      <div [class.boldClass]=\"ApplyBoldClass\">Bold classes by boolean</div><br />\n      <div [ngClass]=\"addClasses()\">component method to apply classes</div>\n  </div><div>\n      <h2>Style Binding</h2>\n      <div [style.font-weight]=\"IsBold ? 'bold' : 'normal'\">style isbold boolean</div><br />\n      <div [style.font-size.px]=\"FontSize\">style FontSize boolean</div><br />\n      <div [ngStyle]=\"setStyles()\">style setStyles method</div><br />\n  </div>\n\n  <div>\n      <h2>Event</h2>\n      <table class=\"table\">\n          <thead>\n              <tr>\n                  <th attr.colspan=\"{{ColumnSpan}}\">\n                      Employee Details\n                  </th>\n              </tr>\n          </thead>\n          <tbody>\n              <tr>\n                  <td>First Name</td>\n                  <td>{{FirstName}}</td>\n              </tr>\n              <tr>\n                  <td>Last Name</td>\n                  <td>{{LastName}}</td>\n              </tr>\n              <tr *ngIf='ShowDetails'>\n                  <td>DateOfBirth</td>\n                  <td>{{DateOfBirth}}</td>\n              </tr>\n              <tr *ngIf='ShowDetails'>\n                  <td>Age</td>\n                  <td>{{Age}}</td>\n              </tr>\n          </tbody>\n      </table>\n\n      <input type=\"checkbox\" [checked]=\"ShowDetails\" (click)=\"btnOnClick()\" />\n      <button (click)=\"btnOnClick()\">\n      {{ShowDetails == false ? 'Show' : 'Hide'}}</button>\n  </div>\n\n  <div>\n      <h2>Two way data binding in Angular2 event targer value method</h2>\n      Input First Name  : <input type=\"text\" [value]=\"FirstName\" (input)=\"FirstName=$event.target.value\" /><br />\n      Output First Name : {{FirstName}}\n      <br />\n      <h2>Two way data binding in Angular2 import the forms module and using the ngModel property</h2>\n      Input First Name  : <input type=\"text\" [(ngModel)]=\"FirstName\" /><br />\n      Output First Name : {{FirstName}}\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/content/learning/learning.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LearningComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var LearningComponent = (function () {
+    function LearningComponent() {
+    }
+    LearningComponent.prototype.ngOnInit = function () {
+    };
+    LearningComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-learning',
+            template: __webpack_require__("../../../../../src/app/content/learning/learning.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/content/learning/learning.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], LearningComponent);
+    return LearningComponent;
 }());
 
 
@@ -409,7 +476,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/content/technology/technology.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"container\">\n  <!--  <input type=\"text\" [(ngModel)]=\"tech.Name\" placeholder=\"Techology Name\"><br><br>\n    <textarea [(ngModel)]=\"tech.Description\" placeholder=\"Techology Description\"\n    class=\"form-control\" ></textarea><br>\n    <button (click)=\"AddTechnology()\" class=\"btn btn-success\">Save</button>\n<br>\n<br> -->\n  <app-add-technology></app-add-technology>\n  <table class=\"table table-striped table-hover table-bordered\">\n    <thead class=\"thead-dark\">\n      <tr>\n        <th>Id</th>\n        <th>Name</th>\n        <th>Description</th>\n        <th>Delete</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let technology of technologies\" (dblclick)=\"deleteTechnology($event, technology)\">\n        <td>{{technology.Id}}</td>\n        <td>{{technology.Name}}</td>\n        <td>{{technology.Description}}</td>\n        <td>\n          <button class=\"btn btn-link fa fa-pencil\" data-toggle=\"modal\" [attr.data-target]=\"'#'+technology.Id + '_myModel'\">  Edit</button>\n        </td>\n        <div class=\"modal\" id=\"{{technology.Id + '_myModel'}}\" class=\"modal fade\">\n          <div class=\"modal-dialog\" role=\"document\">\n            <div class=\"modal-content\">\n              <div class=\"modal-header\">\n                <h5 class=\"modal-title\">\n                  <i class=\"fa fa-file-text\"></i> {{'Edit ' + technology.Name + ' technology'}}</h5>\n                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                  <span aria-hidden=\"true\">&times;</span>\n                </button>\n              </div>\n              <div class=\"modal-body\">\n                <div>\n                  <input type=\"text\" [(ngModel)]=\"technology.Name\" placeholder=\"Techology Name\" class=\"form-control\" name=\"name\" />\n                </div>\n                <br>\n                <div>\n                  <textarea [(ngModel)]=\"technology.Description\" placeholder=\"Techology Description\" class=\"form-control\" name=\"description\"></textarea>\n                </div>\n              </div>\n              <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-warning\" (click)=\"updateTechnology($event, technology)\" data-dismiss=\"modal\">\n                  <i class=\"fa fa-pencil-square-o\"></i> Update Techology</button>\n                <button type=\"button\" class=\"btn btn-danger\" (click)=\"deleteTechnology($event, technology)\" data-dismiss=\"modal\">\n                  <i class=\"fa fa-trash\"></i> Delete Techology</button>\n                <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">\n                  <i class=\"fa fa-window-close\"></i> Close</button>\n              </div>\n            </div>\n          </div>\n        </div>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+module.exports = "<div id=\"container\">\n  <!--  <input type=\"text\" [(ngModel)]=\"tech.Name\" placeholder=\"Techology Name\"><br><br>\n    <textarea [(ngModel)]=\"tech.Description\" placeholder=\"Techology Description\"\n    class=\"form-control\" ></textarea><br>\n    <button (click)=\"AddTechnology()\" class=\"btn btn-success\">Save</button>\n<br>\n<br> -->\n  <app-add-technology></app-add-technology>\n  <table class=\"table table-striped table-hover table-bordered\">\n    <thead class=\"thead-dark\">\n      <tr>\n        <!-- <th>Id</th> -->\n        <th>Name</th>\n        <th>Description</th>\n        <th>Delete</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let technology of technologies\" (dblclick)=\"deleteTechnology($event, technology)\">\n        <!-- <td>{{technology.Id}}</td> -->\n        <td>{{technology.Name}}</td>\n        <td>{{technology.Description}}</td>\n        <td>\n          <button class=\"btn btn-link fa fa-pencil\" data-toggle=\"modal\" [attr.data-target]=\"'#'+technology.Id + '_myModel'\">  Edit</button>\n        </td>\n        <div class=\"modal\" id=\"{{technology.Id + '_myModel'}}\" class=\"modal fade\">\n          <div class=\"modal-dialog\" role=\"document\">\n            <div class=\"modal-content\">\n              <div class=\"modal-header\">\n                <h5 class=\"modal-title\">\n                  <i class=\"fa fa-file-text\"></i> {{'Edit ' + technology.Name + ' technology'}}</h5>\n                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                  <span aria-hidden=\"true\">&times;</span>\n                </button>\n              </div>\n              <div class=\"modal-body\">\n                <div>\n                  <input type=\"text\" [(ngModel)]=\"technology.Name\" placeholder=\"Techology Name\" class=\"form-control\" name=\"name\" />\n                </div>\n                <br>\n                <div>\n                  <textarea [(ngModel)]=\"technology.Description\" placeholder=\"Techology Description\" class=\"form-control\" name=\"description\"></textarea>\n                </div>\n              </div>\n              <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-warning\" (click)=\"updateTechnology($event, technology)\" data-dismiss=\"modal\">\n                  <i class=\"fa fa-pencil-square-o\"></i> Update Techology</button>\n                <button type=\"button\" class=\"btn btn-danger\" (click)=\"deleteTechnology($event, technology)\" data-dismiss=\"modal\">\n                  <i class=\"fa fa-trash\"></i> Delete Techology</button>\n                <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">\n                  <i class=\"fa fa-window-close\"></i> Close</button>\n              </div>\n            </div>\n          </div>\n        </div>\n      </tr>\n    </tbody>\n  </table>\n</div>"
 
 /***/ }),
 
@@ -597,7 +664,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/menu/menu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <nav>\n  <ul>\n    <li><a [routerLink]=\"['/']\" >Technology</a></li>\n    <li><a [routerLink]=\"['/concept']\">Concepts</a></li>\n  </ul>\n</nav> -->\n<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">\n  <a class=\"navbar-brand\" routerLink=\"/\"><i class=\"fa fa-laptop\"></i> Technology Learning</a>\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n  <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item active\">\n        <a class=\"nav-link\" routerLink=\"/\">Home <span class=\"sr-only\">(current)</span></a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/\">Technologies</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/concept\">Concepts</a>\n      </li>\n    </ul>\n    <form class=\"form-inline my-2 my-lg-0\">\n      <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">\n      <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">Search</button>\n    </form>\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">\n  <a class=\"navbar-brand\" routerLink=\"/\"><i class=\"fa fa-laptop\"></i> Technology Learning</a>\n\n  <i class=\"fa fa-bars\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" \n  aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"\n  style=\"padding-right:5px;color:#fff;cursor:pointer;\"></i>\n  <!-- <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" \n  aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span> \n  </button>-->\n  <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item active\">\n        <a class=\"nav-link\" routerLink=\"/\"><i class=\"fa fa-home\"></i> Home <span class=\"sr-only\">(current)</span></a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/\"><i class=\"fa fa-list\"></i> Technologies</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/concept\"><i class=\"fa fa-book\"></i> Concepts</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/learning\"><i class=\"fa fa-language\"></i> Learnings</a>\n      </li>\n    </ul>\n    <form class=\"form-inline my-2 my-lg-0\">\n      <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">\n      <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\"><i class=\"fa fa-search\"></i> Search</button>\n    </form>\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -785,7 +852,7 @@ var TechnologyService = (function () {
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 var environment = {
-    production: true,
+    production: false,
     firebase: {
         apiKey: "AIzaSyDuZGg13FVZfCm5vV1BgsyJoxx3_cjIA-o",
         authDomain: "haji-technology.firebaseapp.com",
