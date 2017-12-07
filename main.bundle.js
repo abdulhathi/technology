@@ -118,12 +118,14 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__app_route__ = __webpack_require__("../../../../../src/app/app.route.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__content_technology_add_technology_add_technology_component__ = __webpack_require__("../../../../../src/app/content/technology/add-technology/add-technology.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__content_learning_learning_component__ = __webpack_require__("../../../../../src/app/content/learning/learning.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__content_concept_add_concept_add_concept_component__ = __webpack_require__("../../../../../src/app/content/concept/add-concept/add-concept.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -156,7 +158,8 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_13__content_concept_concept_component__["a" /* ConceptComponent */],
                 __WEBPACK_IMPORTED_MODULE_14__not_found_component__["a" /* PageNotFoundComponent */],
                 __WEBPACK_IMPORTED_MODULE_16__content_technology_add_technology_add_technology_component__["a" /* AddTechnologyComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__content_learning_learning_component__["a" /* LearningComponent */]
+                __WEBPACK_IMPORTED_MODULE_17__content_learning_learning_component__["a" /* LearningComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__content_concept_add_concept_add_concept_component__["a" /* AddConceptComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -189,11 +192,72 @@ var AppModule = (function () {
 
 
 var Technology_Routes = [
-    { pathMatch: "full", path: "", component: __WEBPACK_IMPORTED_MODULE_0__content_technology_technology_component__["a" /* TechnologyComponent */] },
+    { pathMatch: "full", path: "", component: __WEBPACK_IMPORTED_MODULE_1__content_concept_concept_component__["a" /* ConceptComponent */] },
     { pathMatch: "full", path: "technology", component: __WEBPACK_IMPORTED_MODULE_0__content_technology_technology_component__["a" /* TechnologyComponent */] },
     { pathMatch: "full", path: "concept", component: __WEBPACK_IMPORTED_MODULE_1__content_concept_concept_component__["a" /* ConceptComponent */] },
     { pathMatch: "full", path: "learning", component: __WEBPACK_IMPORTED_MODULE_2__content_learning_learning_component__["a" /* LearningComponent */] },
 ];
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/content/concept/add-concept/add-concept.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/content/concept/add-concept/add-concept.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  add-concept works!\n</p>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/content/concept/add-concept/add-concept.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddConceptComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var AddConceptComponent = (function () {
+    function AddConceptComponent() {
+    }
+    AddConceptComponent.prototype.ngOnInit = function () {
+    };
+    AddConceptComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-add-concept',
+            template: __webpack_require__("../../../../../src/app/content/concept/add-concept/add-concept.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/content/concept/add-concept/add-concept.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], AddConceptComponent);
+    return AddConceptComponent;
+}());
+
 
 
 /***/ }),
@@ -219,7 +283,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/content/concept/concept.component.html":
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "<br>\n<div class=\"container\">\n    <div class=\"form-group\">\n        <label for=\"exampleSelect1\">Select Technology</label>\n        <i class=\"fa fa-plus fa-pull-right faSpace\" data-toggle=\"modal\" data-target=\"#addNewConcept\" title=\"Add\"></i>\n        <select class=\"form-control\" id=\"exampleSelect1\" [(ngModel)]=\"newConcept.TechnologyId\">\n            <option *ngFor=\"let tech of technologies\" [ngValue]=\"tech.Id\">{{tech.Name}}</option>\n        </select>\n    </div>\n    <div class=\"modal fade\" id=\"addNewConcept\">\n        <div class=\"modal-dialog\" role=\"document\">\n            <div class=\"modal-content\">\n                <div class=\"modal-header bg-success text-white\">\n                    <h5 class=\"modal-title\">\n                        <i class=\"fa fa-plus\"></i>  Add new question ?</h5>\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                        <span aria-hidden=\"true\">&times;</span>\n                    </button>\n                </div>\n                <div class=\"modal-body\">\n                    <textarea [(ngModel)]=\"newConcept.ConceptQuestion.Question\" placeholder=\"Question\"></textarea>\n                    <br>\n                    <textarea [(ngModel)]=\"newConcept.ConceptQuestion.Answer\" placeholder=\"Answer\"></textarea>\n                </div>\n                <div class=\"modal-footer\">\n                    <button class=\"btn btn-primary\" (click)=\"this.fbConceptService.AddConcept(newConcept)\" data-dismiss=\"modal\">Add</button>\n                    <button class=\"btn btn-secondary\" data-dismiss=\"modal\">Cancel</button>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <div *ngFor=\"let concept of concepts; let idx = index\" class=\"card text-white bg-success mb-3\" style=\"max-width: 100%;\">\n        <div class=\"card-header text-middle\">{{idx + 1 +'. '+ concept.ConceptQuestion.Question}}\n            <span>\n            <i class=\"fa fa-minus fa-pull-right faSpace\" (click)=\"this.fbConceptService.DeleteConcept(concept)\" title=\"Delete\"></i>\n            <i class=\"fa fa-pencil fa-pull-right faSpace\" (click)=\"editConceptItem(concept)\" title=\"Edit\"></i>\n            <i class=\"fa fa-plus fa-pull-right faSpace\" data-toggle=\"modal\" data-target=\"#addNewConcept\" title=\"Add\"></i>\n        </span>\n        </div>\n        <div class=\"card-body\">\n            <!-- <h4 class=\"card-title\">{{concept.ConceptQuestion.Question}}</h4> -->\n            <p class=\"card-text\">{{concept.ConceptQuestion.Answer}}</p>\n            <div *ngIf=\"isEditConcept == true && editConcept.ConceptQuestion.Question == concept.ConceptQuestion.Question\">\n                <textarea name=\"conceptQuestion\" [(ngModel)]=\"concept.ConceptQuestion.Question\"></textarea>\n                <textarea name=\"conceptQuestion\" [(ngModel)]=\"concept.ConceptQuestion.Answer\"></textarea>\n                <br>\n                <button class=\"btn btn-warning\" (click)=\"updateConceptItem(concept)\">Update</button>\n                <button class=\"btn btn-secondary\" (click)=\"cancelConceptItem(concept)\">Cancel</button>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -229,6 +293,8 @@ module.exports = ""
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConceptComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_fb_concept_service__ = __webpack_require__("../../../../../src/app/services/fb-concept.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_fb_technology_service__ = __webpack_require__("../../../../../src/app/services/fb-technology.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -239,18 +305,46 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var ConceptComponent = (function () {
-    function ConceptComponent() {
+    function ConceptComponent(fbConceptService, fbTechnologyService) {
+        this.fbConceptService = fbConceptService;
+        this.fbTechnologyService = fbTechnologyService;
+        this.newConcept = {
+            ConceptQuestion: {
+                Question: "",
+                Answer: ""
+            }
+        };
+        this.isEditConcept = false;
+        this.editConcept = {};
     }
     ConceptComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.fbConceptService.GetConcepts().subscribe(function (concetList) { return _this.concepts = concetList; });
+        this.fbTechnologyService.getTechnologies().subscribe(function (techs) { return _this.technologies = techs; });
+    };
+    ConceptComponent.prototype.editConceptItem = function (concept) {
+        this.isEditConcept = true;
+        this.editConcept = concept;
+    };
+    ConceptComponent.prototype.updateConceptItem = function (concept) {
+        this.isEditConcept = false;
+        this.fbConceptService.UpdateConcept(concept);
+    };
+    ConceptComponent.prototype.cancelConceptItem = function (concept) {
+        this.isEditConcept = false;
     };
     ConceptComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-concept',
             template: __webpack_require__("../../../../../src/app/content/concept/concept.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/content/concept/concept.component.css")]
+            styles: [__webpack_require__("../../../../../src/app/content/concept/concept.component.css")],
+            providers: [__WEBPACK_IMPORTED_MODULE_1__services_fb_concept_service__["a" /* FbConceptService */], __WEBPACK_IMPORTED_MODULE_2__services_fb_technology_service__["a" /* FbTechnologyService */]]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_fb_concept_service__["a" /* FbConceptService */],
+            __WEBPACK_IMPORTED_MODULE_2__services_fb_technology_service__["a" /* FbTechnologyService */]])
     ], ConceptComponent);
     return ConceptComponent;
 }());
@@ -476,7 +570,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/content/technology/technology.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"container\">\n  <!--  <input type=\"text\" [(ngModel)]=\"tech.Name\" placeholder=\"Techology Name\"><br><br>\n    <textarea [(ngModel)]=\"tech.Description\" placeholder=\"Techology Description\"\n    class=\"form-control\" ></textarea><br>\n    <button (click)=\"AddTechnology()\" class=\"btn btn-success\">Save</button>\n<br>\n<br> -->\n  <app-add-technology></app-add-technology>\n  <table class=\"table table-striped table-hover table-bordered\">\n    <thead class=\"thead-dark\">\n      <tr>\n        <!-- <th>Id</th> -->\n        <th>Name</th>\n        <th>Description</th>\n        <th>Delete</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let technology of technologies\" (dblclick)=\"deleteTechnology($event, technology)\">\n        <!-- <td>{{technology.Id}}</td> -->\n        <td>{{technology.Name}}</td>\n        <td>{{technology.Description}}</td>\n        <td>\n          <button class=\"btn btn-link fa fa-pencil\" data-toggle=\"modal\" [attr.data-target]=\"'#'+technology.Id + '_myModel'\">  Edit</button>\n        </td>\n        <div class=\"modal\" id=\"{{technology.Id + '_myModel'}}\" class=\"modal fade\">\n          <div class=\"modal-dialog\" role=\"document\">\n            <div class=\"modal-content\">\n              <div class=\"modal-header\">\n                <h5 class=\"modal-title\">\n                  <i class=\"fa fa-file-text\"></i> {{'Edit ' + technology.Name + ' technology'}}</h5>\n                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                  <span aria-hidden=\"true\">&times;</span>\n                </button>\n              </div>\n              <div class=\"modal-body\">\n                <div>\n                  <input type=\"text\" [(ngModel)]=\"technology.Name\" placeholder=\"Techology Name\" class=\"form-control\" name=\"name\" />\n                </div>\n                <br>\n                <div>\n                  <textarea [(ngModel)]=\"technology.Description\" placeholder=\"Techology Description\" class=\"form-control\" name=\"description\"></textarea>\n                </div>\n              </div>\n              <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-warning\" (click)=\"updateTechnology($event, technology)\" data-dismiss=\"modal\">\n                  <i class=\"fa fa-pencil-square-o\"></i> Update Techology</button>\n                <button type=\"button\" class=\"btn btn-danger\" (click)=\"deleteTechnology($event, technology)\" data-dismiss=\"modal\">\n                  <i class=\"fa fa-trash\"></i> Delete Techology</button>\n                <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">\n                  <i class=\"fa fa-window-close\"></i> Close</button>\n              </div>\n            </div>\n          </div>\n        </div>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+module.exports = "<div id=\"container\">\n  <!--  <input type=\"text\" [(ngModel)]=\"tech.Name\" placeholder=\"Techology Name\"><br><br>\n    <textarea [(ngModel)]=\"tech.Description\" placeholder=\"Techology Description\"\n    class=\"form-control\" ></textarea><br>\n    <button (click)=\"AddTechnology()\" class=\"btn btn-success\">Save</button>\n<br>\n<br> -->\n  <app-add-technology></app-add-technology>\n  <table class=\"table table-striped table-hover table-bordered\">\n    <thead class=\"thead-dark\">\n      <tr>\n        <th>Id</th>\n        <th>Name</th>\n        <th>Description</th>\n        <th>Edit</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let technology of technologies;let idx = index\" (dblclick)=\"deleteTechnology($event, technology)\">\n        <td>{{idx + 1}}</td>\n        <td>{{technology.Name}}</td>\n        <td>{{technology.Description}}</td>\n        <td>\n          <button class=\"btn btn-link fa fa-pencil\" data-toggle=\"modal\" [attr.data-target]=\"'#'+technology.Id + '_myModel'\"> Edit</button>\n        </td>\n        <div class=\"modal fade\" id=\"{{technology.Id + '_myModel'}}\">\n          <div class=\"modal-dialog\" role=\"document\">\n            <div class=\"modal-content\">\n              <div class=\"modal-header\">\n                <h5 class=\"modal-title\">\n                  <i class=\"fa fa-file-text\"></i> {{'Edit ' + technology.Name + ' technology'}}</h5>\n                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                  <span aria-hidden=\"true\">&times;</span>\n                </button>\n              </div>\n              <div class=\"modal-body\">\n                <div>\n                  <input type=\"text\" [(ngModel)]=\"technology.Name\" placeholder=\"Techology Name\" class=\"form-control\" name=\"name\" />\n                </div>\n                <br>\n                <div>\n                  <textarea [(ngModel)]=\"technology.Description\" placeholder=\"Techology Description\" class=\"form-control\" name=\"description\"></textarea>\n                </div>\n              </div>\n              <div class=\"modal-footer\">\n                <button type=\"button\" class=\"btn btn-warning\" (click)=\"updateTechnology($event, technology)\" data-dismiss=\"modal\">\n                  <i class=\"fa fa-pencil-square-o\"></i> Update Techology</button>\n                <button type=\"button\" class=\"btn btn-danger\" (click)=\"deleteTechnology($event, technology)\" data-dismiss=\"modal\">\n                  <i class=\"fa fa-trash\"></i> Delete Techology</button>\n                <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">\n                  <i class=\"fa fa-window-close\"></i> Close</button>\n              </div>\n            </div>\n          </div>\n        </div>\n      </tr>\n    </tbody>\n  </table>\n</div>"
 
 /***/ }),
 
@@ -664,7 +758,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/menu/menu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">\n  <a class=\"navbar-brand\" routerLink=\"/\"><i class=\"fa fa-laptop\"></i> Technology Learning</a>\n\n  <i class=\"fa fa-bars\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" \n  aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"\n  style=\"padding-right:5px;color:#fff;cursor:pointer;\"></i>\n  <!-- <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" \n  aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span> \n  </button>-->\n  <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item active\">\n        <a class=\"nav-link\" routerLink=\"/\"><i class=\"fa fa-home\"></i> Home <span class=\"sr-only\">(current)</span></a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/\"><i class=\"fa fa-list\"></i> Technologies</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/concept\"><i class=\"fa fa-book\"></i> Concepts</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/learning\"><i class=\"fa fa-language\"></i> Learnings</a>\n      </li>\n    </ul>\n    <form class=\"form-inline my-2 my-lg-0\">\n      <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">\n      <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\"><i class=\"fa fa-search\"></i> Search</button>\n    </form>\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">\n  <a class=\"navbar-brand\" routerLink=\"/\"><i class=\"fa fa-laptop\"></i> Technology Learning</a>\n\n  <i class=\"fa fa-bars\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" \n  aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"\n  style=\"padding-right:5px;color:#fff;cursor:pointer;\"></i>\n  <!-- <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" \n  aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span> \n  </button>-->\n  <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\n    <ul class=\"navbar-nav mr-auto\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" \n    aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <li class=\"nav-item active\">\n        <a class=\"nav-link\" routerLink=\"/\">\n          <i class=\"fa fa-home\"></i> Home <span class=\"sr-only\">(current)</span></a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/technology\"><i class=\"fa fa-list\"></i> Technologies</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/concept\"><i class=\"fa fa-book\"></i> Concepts</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/learning\"><i class=\"fa fa-language\"></i> Learnings</a>\n      </li>\n    </ul>\n    <form class=\"form-inline my-2 my-lg-0\">\n      <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">\n      <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\"><i class=\"fa fa-search\"></i> Search</button>\n    </form>\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -733,6 +827,61 @@ Copyright 2017 Google Inc. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at http://angular.io/license
 */ 
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/services/fb-concept.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FbConceptService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_firestore__ = __webpack_require__("../../../../angularfire2/firestore/index.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var FbConceptService = (function () {
+    function FbConceptService(afs) {
+        this.afs = afs;
+        this.conceptCollection = this.afs.collection("Concept");
+        this.concepts = this.conceptCollection.snapshotChanges().map(function (changes) {
+            return changes.map(function (a) {
+                var data = a.payload.doc.data();
+                data.Id = a.payload.doc.id;
+                return data;
+            });
+        });
+    }
+    FbConceptService.prototype.GetConcepts = function () {
+        return this.concepts;
+    };
+    FbConceptService.prototype.AddConcept = function (concept) {
+        this.conceptCollection.add(concept);
+    };
+    FbConceptService.prototype.UpdateConcept = function (concept) {
+        this.conceptDoc = this.afs.doc("Concept/" + concept.Id);
+        this.conceptDoc.update(concept);
+    };
+    FbConceptService.prototype.DeleteConcept = function (concept) {
+        this.conceptDoc = this.afs.doc("Concept/" + concept.Id);
+        this.conceptDoc.delete();
+    };
+    FbConceptService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_firestore__["a" /* AngularFirestore */]])
+    ], FbConceptService);
+    return FbConceptService;
+}());
+
 
 
 /***/ }),
