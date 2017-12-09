@@ -77,7 +77,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\ntextarea\n{\n    width:100%;\n    border: 0.5px solid rgb(0, 122, 8);\n    min-height: 100px;\n    border-radius: 2px;\n}\n.faSpace\n{\n    padding:5px;\n   cursor: pointer;\n   border-radius: 2px;\n}", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\ntextarea\n{\n    width:100%;\n    border: 0.5px solid rgb(0, 122, 8);\n    min-height: 100px;\n    border-radius: 2px;\n}\n.faSpace\n{\n    padding:5px;\n   cursor: pointer;\n   border-radius: 2px;\n}\n.faWhite\n{\n    color:#fff;\n}\n.margin-right-5px\n{\n    margin-right: 5px;\n}\n.margin-right-10px\n{\n    margin-right: 10px;\n}\n.btn\n{\n    border-radius: 3px;\n    margin: 2px;\n}\n.row > div\n{\n    width:100%;\n    margin: 19px;\n}\n.form-control\n{\n    border-radius: 3px;\n}\n\n@media(min-width: 1000px)\n{\n    .row > div\n    {\n        width: 45%;\n    }\n}\n\n@media(min-width: 1500px)\n{\n    .row > div\n    {\n        width: 30%;\n    }\n}\n\n.navbar-toggler\n{\n    border-width: 0px;\n}", ""]);
 
 // exports
 

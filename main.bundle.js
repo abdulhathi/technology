@@ -108,17 +108,19 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angularfire2__ = __webpack_require__("../../../../angularfire2/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angularfire2_firestore__ = __webpack_require__("../../../../angularfire2/firestore/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__menu_menu_component__ = __webpack_require__("../../../../../src/app/menu/menu.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__content_content_component__ = __webpack_require__("../../../../../src/app/content/content.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__footer_footer_component__ = __webpack_require__("../../../../../src/app/footer/footer.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__content_technology_technology_component__ = __webpack_require__("../../../../../src/app/content/technology/technology.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__content_concept_concept_component__ = __webpack_require__("../../../../../src/app/content/concept/concept.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__not_found_component__ = __webpack_require__("../../../../../src/app/not-found.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__app_route__ = __webpack_require__("../../../../../src/app/app.route.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__content_technology_add_technology_add_technology_component__ = __webpack_require__("../../../../../src/app/content/technology/add-technology/add-technology.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__content_learning_learning_component__ = __webpack_require__("../../../../../src/app/content/learning/learning.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__content_concept_add_concept_add_concept_component__ = __webpack_require__("../../../../../src/app/content/concept/add-concept/add-concept.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2_auth__ = __webpack_require__("../../../../angularfire2/auth/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__menu_menu_component__ = __webpack_require__("../../../../../src/app/menu/menu.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__content_content_component__ = __webpack_require__("../../../../../src/app/content/content.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__footer_footer_component__ = __webpack_require__("../../../../../src/app/footer/footer.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__content_technology_technology_component__ = __webpack_require__("../../../../../src/app/content/technology/technology.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__content_concept_concept_component__ = __webpack_require__("../../../../../src/app/content/concept/concept.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__not_found_component__ = __webpack_require__("../../../../../src/app/not-found.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__app_route__ = __webpack_require__("../../../../../src/app/app.route.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__content_technology_add_technology_add_technology_component__ = __webpack_require__("../../../../../src/app/content/technology/add-technology/add-technology.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__content_learning_learning_component__ = __webpack_require__("../../../../../src/app/content/learning/learning.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__content_concept_add_concept_add_concept_component__ = __webpack_require__("../../../../../src/app/content/concept/add-concept/add-concept.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__content_home_home_component__ = __webpack_require__("../../../../../src/app/content/home/home.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -144,33 +146,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__menu_menu_component__["a" /* MenuComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__content_content_component__["a" /* ContentComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__footer_footer_component__["a" /* FooterComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__content_technology_technology_component__["a" /* TechnologyComponent */],
-                __WEBPACK_IMPORTED_MODULE_13__content_concept_concept_component__["a" /* ConceptComponent */],
-                __WEBPACK_IMPORTED_MODULE_14__not_found_component__["a" /* PageNotFoundComponent */],
-                __WEBPACK_IMPORTED_MODULE_16__content_technology_add_technology_add_technology_component__["a" /* AddTechnologyComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__content_learning_learning_component__["a" /* LearningComponent */],
-                __WEBPACK_IMPORTED_MODULE_18__content_concept_add_concept_add_concept_component__["a" /* AddConceptComponent */]
+                __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__menu_menu_component__["a" /* MenuComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__content_content_component__["a" /* ContentComponent */],
+                __WEBPACK_IMPORTED_MODULE_12__footer_footer_component__["a" /* FooterComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__content_technology_technology_component__["a" /* TechnologyComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__content_concept_concept_component__["a" /* ConceptComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__not_found_component__["a" /* PageNotFoundComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__content_technology_add_technology_add_technology_component__["a" /* AddTechnologyComponent */],
+                __WEBPACK_IMPORTED_MODULE_18__content_learning_learning_component__["a" /* LearningComponent */],
+                __WEBPACK_IMPORTED_MODULE_19__content_concept_add_concept_add_concept_component__["a" /* AddConceptComponent */],
+                __WEBPACK_IMPORTED_MODULE_20__content_home_home_component__["a" /* HomeComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_5_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_7__environments_environment__["a" /* environment */].firebase, 'angularfs'),
                 __WEBPACK_IMPORTED_MODULE_6_angularfire2_firestore__["b" /* AngularFirestoreModule */],
-                __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_15__app_route__["a" /* Technology_Routes */]),
+                __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_16__app_route__["a" /* Technology_Routes */]),
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
                 __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["b" /* HttpClientModule */]
             ],
-            providers: [],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_8_angularfire2_auth__["a" /* AngularFireAuth */]],
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -188,11 +193,13 @@ var AppModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__content_technology_technology_component__ = __webpack_require__("../../../../../src/app/content/technology/technology.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__content_concept_concept_component__ = __webpack_require__("../../../../../src/app/content/concept/concept.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__content_learning_learning_component__ = __webpack_require__("../../../../../src/app/content/learning/learning.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__content_home_home_component__ = __webpack_require__("../../../../../src/app/content/home/home.component.ts");
+
 
 
 
 var Technology_Routes = [
-    { pathMatch: "full", path: "", component: __WEBPACK_IMPORTED_MODULE_1__content_concept_concept_component__["a" /* ConceptComponent */] },
+    { pathMatch: "full", path: "", component: __WEBPACK_IMPORTED_MODULE_3__content_home_home_component__["a" /* HomeComponent */] },
     { pathMatch: "full", path: "technology", component: __WEBPACK_IMPORTED_MODULE_0__content_technology_technology_component__["a" /* TechnologyComponent */] },
     { pathMatch: "full", path: "concept", component: __WEBPACK_IMPORTED_MODULE_1__content_concept_concept_component__["a" /* ConceptComponent */] },
     { pathMatch: "full", path: "learning", component: __WEBPACK_IMPORTED_MODULE_2__content_learning_learning_component__["a" /* LearningComponent */] },
@@ -283,7 +290,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/content/concept/concept.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<br>\n<div class=\"container\">\n    <div class=\"form-group\">\n        <label for=\"exampleSelect1\">Select Technology</label>\n        <i class=\"fa fa-plus fa-pull-right faSpace\" data-toggle=\"modal\" data-target=\"#addNewConcept\" title=\"Add\"></i>\n        <select class=\"form-control\" id=\"exampleSelect1\" [(ngModel)]=\"newConcept.TechnologyId\">\n            <option *ngFor=\"let tech of technologies\" [ngValue]=\"tech.Id\">{{tech.Name}}</option>\n        </select>\n    </div>\n    <div class=\"modal fade\" id=\"addNewConcept\">\n        <div class=\"modal-dialog\" role=\"document\">\n            <div class=\"modal-content\">\n                <div class=\"modal-header bg-success text-white\">\n                    <h5 class=\"modal-title\">\n                        <i class=\"fa fa-plus\"></i>  Add new question ?</h5>\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                        <span aria-hidden=\"true\">&times;</span>\n                    </button>\n                </div>\n                <div class=\"modal-body\">\n                    <textarea [(ngModel)]=\"newConcept.ConceptQuestion.Question\" placeholder=\"Question\"></textarea>\n                    <br>\n                    <textarea [(ngModel)]=\"newConcept.ConceptQuestion.Answer\" placeholder=\"Answer\"></textarea>\n                </div>\n                <div class=\"modal-footer\">\n                    <button class=\"btn btn-primary\" (click)=\"this.fbConceptService.AddConcept(newConcept)\" data-dismiss=\"modal\">Add</button>\n                    <button class=\"btn btn-secondary\" data-dismiss=\"modal\">Cancel</button>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <div *ngFor=\"let concept of concepts; let idx = index\" class=\"card text-white bg-success mb-3\" style=\"max-width: 100%;\">\n        <div class=\"card-header text-middle\">{{idx + 1 +'. '+ concept.ConceptQuestion.Question}}\n            <span>\n            <i class=\"fa fa-minus fa-pull-right faSpace\" (click)=\"this.fbConceptService.DeleteConcept(concept)\" title=\"Delete\"></i>\n            <i class=\"fa fa-pencil fa-pull-right faSpace\" (click)=\"editConceptItem(concept)\" title=\"Edit\"></i>\n            <i class=\"fa fa-plus fa-pull-right faSpace\" data-toggle=\"modal\" data-target=\"#addNewConcept\" title=\"Add\"></i>\n        </span>\n        </div>\n        <div class=\"card-body\">\n            <!-- <h4 class=\"card-title\">{{concept.ConceptQuestion.Question}}</h4> -->\n            <p class=\"card-text\">{{concept.ConceptQuestion.Answer}}</p>\n            <div *ngIf=\"isEditConcept == true && editConcept.ConceptQuestion.Question == concept.ConceptQuestion.Question\">\n                <textarea name=\"conceptQuestion\" [(ngModel)]=\"concept.ConceptQuestion.Question\"></textarea>\n                <textarea name=\"conceptQuestion\" [(ngModel)]=\"concept.ConceptQuestion.Answer\"></textarea>\n                <br>\n                <button class=\"btn btn-warning\" (click)=\"updateConceptItem(concept)\">Update</button>\n                <button class=\"btn btn-secondary\" (click)=\"cancelConceptItem(concept)\">Cancel</button>\n            </div>\n        </div>\n    </div>\n</div>"
+module.exports = "<br>\n<div class=\"container\">\n    <div class=\"form-group\">\n        <label for=\"exampleSelect1\">Select Technology</label>\n        <i class=\"fa fa-plus fa-pull-right faSpace\" data-toggle=\"modal\" data-target=\"#addNewConcept\" title=\"Add\"></i>\n        <select class=\"form-control\" id=\"exampleSelect1\" [(ngModel)]=\"newConcept.TechnologyId\" (change)=\"techChange()\">\n            <option *ngFor=\"let tech of technologies\" [ngValue]=\"tech.Id\">{{tech.Name}}</option>\n        </select>\n    </div>\n    <div class=\"modal fade\" id=\"addNewConcept\">\n        <div class=\"modal-dialog\" role=\"document\">\n            <div class=\"modal-content\">\n                <div class=\"modal-header bg-success text-white\">\n                    <h5 class=\"modal-title\">\n                        <i class=\"fa fa-plus\"></i>  Add new question ?</h5>\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                        <span aria-hidden=\"true\">&times;</span>\n                    </button>\n                </div>\n                <div class=\"modal-body\">\n                    <textarea [(ngModel)]=\"newConcept.ConceptQuestion.Question\" placeholder=\"Question\"></textarea>\n                    <br>\n                    <textarea [(ngModel)]=\"newConcept.ConceptQuestion.Answer\" placeholder=\"Answer\"></textarea>\n                </div>\n                <div class=\"modal-footer\">\n                    <button class=\"btn btn-primary\" (click)=\"this.fbConceptService.AddConcept(newConcept)\" data-dismiss=\"modal\">Add</button>\n                    <button class=\"btn btn-secondary\" data-dismiss=\"modal\">Cancel</button>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <div *ngFor=\"let concept of concepts; let idx = index\" class=\"card text-white bg-success mb-3\" style=\"max-width: 100%;\">\n        <div class=\"card-header text-middle\">{{idx + 1 +'. '+ concept.ConceptQuestion.Question}}\n            <span>\n            <i class=\"fa fa-minus fa-pull-right faSpace\" (click)=\"this.fbConceptService.DeleteConcept(concept)\" title=\"Delete\"></i>\n            <i class=\"fa fa-pencil fa-pull-right faSpace\" (click)=\"editConceptItem(concept)\" title=\"Edit\"></i>\n            <i class=\"fa fa-plus fa-pull-right faSpace\" data-toggle=\"modal\" data-target=\"#addNewConcept\" title=\"Add\"></i>\n        </span>\n        </div>\n        <div class=\"card-body\">\n            <!-- <h4 class=\"card-title\">{{concept.ConceptQuestion.Question}}</h4> -->\n            <p class=\"card-text\">{{concept.ConceptQuestion.Answer}}</p>\n            <div *ngIf=\"isEditConcept == true && editConcept.ConceptQuestion.Question == concept.ConceptQuestion.Question\">\n                <textarea name=\"conceptQuestion\" [(ngModel)]=\"concept.ConceptQuestion.Question\"></textarea>\n                <textarea name=\"conceptQuestion\" [(ngModel)]=\"concept.ConceptQuestion.Answer\"></textarea>\n                <br>\n                <button class=\"btn btn-warning\" (click)=\"updateConceptItem(concept)\">Update</button>\n                <button class=\"btn btn-secondary\" (click)=\"cancelConceptItem(concept)\">Cancel</button>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -322,8 +329,9 @@ var ConceptComponent = (function () {
     }
     ConceptComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.fbConceptService.GetConcepts().subscribe(function (concetList) { return _this.concepts = concetList; });
+        //this.fbConceptService.GetConcepts().subscribe(concetList => this.concepts = concetList);
         this.fbTechnologyService.getTechnologies().subscribe(function (techs) { return _this.technologies = techs; });
+        this.fbConceptService.GetConcepts().subscribe(function (concetList) { return _this.concepts = concetList; });
     };
     ConceptComponent.prototype.editConceptItem = function (concept) {
         this.isEditConcept = true;
@@ -335,6 +343,8 @@ var ConceptComponent = (function () {
     };
     ConceptComponent.prototype.cancelConceptItem = function (concept) {
         this.isEditConcept = false;
+    };
+    ConceptComponent.prototype.techChange = function () {
     };
     ConceptComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -408,6 +418,67 @@ var ContentComponent = (function () {
         __metadata("design:paramtypes", [])
     ], ContentComponent);
     return ContentComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/content/home/home.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/content/home/home.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <br>\n  <div>\n    <h3 class=\"display-3\">Welcome to Technology</h3>\n    <p class=\"lead\">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>\n    <hr class=\"my-4\">\n    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>\n    <p class=\"lead\">\n      <a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Learn more</a>\n    </p>\n  </div>\n  <div class=\"row\">\n    <div class=\"card text-white bg-primary mb-3\">\n      <div class=\"card-header\">Header</div>\n      <div class=\"card-body\">\n        <h4 class=\"card-title\">Primary card title</h4>\n        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>\n      </div>\n    </div>\n    <div class=\"card text-white bg-secondary mb-3\">\n      <div class=\"card-header\">Header</div>\n      <div class=\"card-body\">\n        <h4 class=\"card-title\">Secondary card title</h4>\n        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>\n      </div>\n    </div>\n    <div class=\"card text-white bg-success mb-3\">\n      <div class=\"card-header\">Header</div>\n      <div class=\"card-body\">\n        <h4 class=\"card-title\">Success card title</h4>\n        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>\n      </div>\n    </div>\n    <div class=\"card text-white bg-danger mb-3\">\n      <div class=\"card-header\">Header</div>\n      <div class=\"card-body\">\n        <h4 class=\"card-title\">Danger card title</h4>\n        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>\n      </div>\n    </div>\n    <div class=\"card text-white bg-warning mb-3\">\n      <div class=\"card-header\">Header</div>\n      <div class=\"card-body\">\n        <h4 class=\"card-title\">Warning card title</h4>\n        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>\n      </div>\n    </div>\n    <div class=\"card text-white bg-info mb-3\">\n      <div class=\"card-header\">Header</div>\n      <div class=\"card-body\">\n        <h4 class=\"card-title\">Info card title</h4>\n        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>\n      </div>\n    </div>\n    <div class=\"card bg-light mb-3\">\n      <div class=\"card-header\">Header</div>\n      <div class=\"card-body\">\n        <h4 class=\"card-title\">Light card title</h4>\n        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>\n      </div>\n    </div>\n    <div class=\"card text-white bg-dark mb-3\">\n      <div class=\"card-header\">Header</div>\n      <div class=\"card-body\">\n        <h4 class=\"card-title\">Dark card title</h4>\n        <p class=\"card-text\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>\n      </div>\n    </div>\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/content/home/home.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var HomeComponent = (function () {
+    function HomeComponent() {
+    }
+    HomeComponent.prototype.ngOnInit = function () {
+    };
+    HomeComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-home',
+            template: __webpack_require__("../../../../../src/app/content/home/home.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/content/home/home.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], HomeComponent);
+    return HomeComponent;
 }());
 
 
@@ -758,7 +829,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/menu/menu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">\n  <a class=\"navbar-brand\" routerLink=\"/\"><i class=\"fa fa-laptop\"></i> Technology Learning</a>\n\n  <i class=\"fa fa-bars\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" \n  aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"\n  style=\"padding-right:5px;color:#fff;cursor:pointer;\"></i>\n  <!-- <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" \n  aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span> \n  </button>-->\n  <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\n    <ul class=\"navbar-nav mr-auto\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" \n    aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <li class=\"nav-item active\">\n        <a class=\"nav-link\" routerLink=\"/\">\n          <i class=\"fa fa-home\"></i> Home <span class=\"sr-only\">(current)</span></a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/technology\"><i class=\"fa fa-list\"></i> Technologies</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/concept\"><i class=\"fa fa-book\"></i> Concepts</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/learning\"><i class=\"fa fa-language\"></i> Learnings</a>\n      </li>\n    </ul>\n    <form class=\"form-inline my-2 my-lg-0\">\n      <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">\n      <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\"><i class=\"fa fa-search\"></i> Search</button>\n    </form>\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">\n  <a class=\"navbar-brand\" routerLink=\"/\">\n    <i class=\"fa fa-laptop\"></i> Technology</a>\n  <div class=\"navbar-toggler\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\"\n    aria-label=\"Toggle navigation\">\n    <!-- <span class=\"navbar-toggler-icon\"></span>  -->\n    <i class=\"fa fa-bars\" style=\"padding:3px 6px;color:#fff;cursor:pointer;border:1px solid #fff;border-radius:3px;\"></i>\n  </div>\n  <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item active margin-right-10px\">\n        <a class=\"nav-link\" routerLink=\"/\">\n          <i class=\"fa fa-home\"></i> Home\n          <span class=\"sr-only\">(current)</span>\n        </a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/technology\">\n          <i class=\"fa fa-list\"></i> Technologies</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/concept\">\n          <i class=\"fa fa-book\"></i> Concepts</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/learning\">\n          <i class=\"fa fa-language\"></i> Learnings</a>\n      </li>\n      <!-- <li class=\"nav-item\">\n        <a class=\"nav-link\" (click)=\"SignIn()\" ><i class=\"fa fa-sign-in\"></i> Sign In</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" (click)=\"SignOut()\" ><i class=\"fa fa-sign-out\"></i> Sign Out</a>\n      </li> -->\n    </ul>\n    <form class=\"form-inline my-2 my-lg-0\">\n      <div *ngIf=\"!isUserLoggedIn\" class=\"my-2 my-sm-0\">\n        <i class=\"fa fa-user-circle-o faSpace faWhite\" (click)=\"SignIn()\"> Sign In</i>\n      </div>\n      <div *ngIf=\"isUserLoggedIn\" class=\"my-2 my-sm-0\">\n        <i class=\"fa fa-user-circle faSpace faWhite\" (click)=\"SignOut()\">{{\"  \" + userDisplayName}}</i>\n      </div>\n      <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">\n      <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">\n        <i class=\"fa fa-search\"></i> Search</button>\n    </form>\n  </div>\n</nav>"
 
 /***/ }),
 
@@ -768,6 +839,7 @@ module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenuComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_auth_service__ = __webpack_require__("../../../../../src/app/services/auth.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -778,18 +850,44 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var MenuComponent = (function () {
-    function MenuComponent() {
+    function MenuComponent(authService) {
+        var _this = this;
+        this.authService = authService;
+        this.userDisplayName = "";
+        this.isUserLoggedIn = false;
+        if (authService.user) {
+            authService.user.subscribe(function (user) {
+                if (user) {
+                    console.log(user);
+                    _this.userDisplayName = user.email;
+                    _this.isUserLoggedIn = true;
+                }
+                else {
+                    console.log("User Null");
+                }
+            });
+        }
     }
     MenuComponent.prototype.ngOnInit = function () {
+    };
+    MenuComponent.prototype.SignIn = function () {
+        console.log(this.authService.googleLogIn());
+    };
+    MenuComponent.prototype.SignOut = function () {
+        this.authService.signOut();
+        this.userDisplayName = "";
+        this.isUserLoggedIn = false;
     };
     MenuComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-menu',
             template: __webpack_require__("../../../../../src/app/menu/menu.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/menu/menu.component.css")]
+            styles: [__webpack_require__("../../../../../src/app/menu/menu.component.css")],
+            providers: [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]])
     ], MenuComponent);
     return MenuComponent;
 }());
@@ -831,6 +929,88 @@ can be found in the LICENSE file at http://angular.io/license
 
 /***/ }),
 
+/***/ "../../../../../src/app/services/auth.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__("../../../../angularfire2/auth/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_firestore__ = __webpack_require__("../../../../angularfire2/firestore/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase_app__ = __webpack_require__("../../../../firebase/app/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_firebase_app__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var AuthService = (function () {
+    function AuthService(afAuth, afs, router) {
+        var _this = this;
+        this.afAuth = afAuth;
+        this.afs = afs;
+        this.router = router;
+        this.user = this.afAuth.authState.switchMap(function (user) {
+            if (user) {
+                var usr = _this.afs.doc("Users/" + user.uid).valueChanges();
+                return usr;
+            }
+            else {
+                return __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["a" /* Observable */].of(null);
+            }
+        });
+    }
+    AuthService.prototype.googleLogIn = function () {
+        var provider = new __WEBPACK_IMPORTED_MODULE_5_firebase_app__["auth"].GoogleAuthProvider();
+        return this.oAuthLogin(provider);
+    };
+    AuthService.prototype.oAuthLogin = function (provider) {
+        var _this = this;
+        return this.afAuth.auth.signInWithPopup(provider).then(function (credential) {
+            _this.updateUserData(credential.user);
+        });
+    };
+    AuthService.prototype.updateUserData = function (user) {
+        var userRef = this.afs.doc("Users/" + user.uid);
+        var data = {
+            uid: user.uid,
+            email: user.email,
+            photoURL: user.photoURL,
+            displayName: user.displayName
+        };
+        userRef.set(data);
+    };
+    AuthService.prototype.signOut = function () {
+        var _this = this;
+        this.afAuth.auth.signOut().then(function () {
+            _this.router.navigate(['/']);
+        });
+    };
+    AuthService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */],
+            __WEBPACK_IMPORTED_MODULE_3_angularfire2_firestore__["a" /* AngularFirestore */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]])
+    ], AuthService);
+    return AuthService;
+}());
+
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/services/fb-concept.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -862,6 +1042,9 @@ var FbConceptService = (function () {
         });
     }
     FbConceptService.prototype.GetConcepts = function () {
+        return this.concepts;
+    };
+    FbConceptService.prototype.GetConceptsByTechnology = function (technologyId) {
         return this.concepts;
     };
     FbConceptService.prototype.AddConcept = function (concept) {
