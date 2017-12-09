@@ -829,7 +829,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/menu/menu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">\n  <a class=\"navbar-brand\" routerLink=\"/\">\n    <i class=\"fa fa-laptop\"></i> Technology</a>\n  <div class=\"navbar-toggler\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\"\n    aria-label=\"Toggle navigation\">\n    <!-- <span class=\"navbar-toggler-icon\"></span>  -->\n    <i class=\"fa fa-bars\" style=\"padding:3px 6px;color:#fff;cursor:pointer;border:1px solid #fff;border-radius:3px;\"></i>\n  </div>\n  <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item active margin-right-10px\">\n        <a class=\"nav-link\" routerLink=\"/\">\n          <i class=\"fa fa-home\"></i> Home\n          <span class=\"sr-only\">(current)</span>\n        </a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/technology\">\n          <i class=\"fa fa-list\"></i> Technologies</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/concept\">\n          <i class=\"fa fa-book\"></i> Concepts</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/learning\">\n          <i class=\"fa fa-language\"></i> Learnings</a>\n      </li>\n      <!-- <li class=\"nav-item\">\n        <a class=\"nav-link\" (click)=\"SignIn()\" ><i class=\"fa fa-sign-in\"></i> Sign In</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" (click)=\"SignOut()\" ><i class=\"fa fa-sign-out\"></i> Sign Out</a>\n      </li> -->\n    </ul>\n    <form class=\"form-inline my-2 my-lg-0\">\n      <div *ngIf=\"!isUserLoggedIn\" class=\"my-2 my-sm-0\">\n        <i class=\"fa fa-user-circle-o faSpace faWhite\" (click)=\"SignIn()\"> Sign In</i>\n      </div>\n      <div *ngIf=\"isUserLoggedIn\" class=\"my-2 my-sm-0\">\n        <i class=\"fa fa-user-circle faSpace faWhite\" (click)=\"SignOut()\">{{\"  \" + userDisplayName}}</i>\n      </div>\n      <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">\n      <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">\n        <i class=\"fa fa-search\"></i> Search</button>\n    </form>\n  </div>\n</nav>"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">\n  <a class=\"navbar-brand\" routerLink=\"/\">\n    <i class=\"fa fa-laptop\"></i> Technology</a>\n  <div class=\"navbar-toggler\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\"\n    aria-label=\"Toggle navigation\">\n    <!-- <span class=\"navbar-toggler-icon\"></span>  -->\n    <i class=\"fa fa-bars\" style=\"padding:3px 6px;color:#fff;cursor:pointer;border:1px solid #fff;border-radius:3px;\"></i>\n  </div>\n  <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item active margin-right-10px\">\n        <a class=\"nav-link\" routerLink=\"/\">\n          <i class=\"fa fa-home\"></i> Home\n          <span class=\"sr-only\">(current)</span>\n        </a>\n      </li>\n      \n      <li class=\"nav-item\" *ngIf=\"isUserLoggedIn\" >\n        <a class=\"nav-link\" routerLink=\"/technology\">\n          <i class=\"fa fa-list\"></i> Technologies</a>\n      </li>\n      <li class=\"nav-item\" *ngIf=\"isUserLoggedIn\" >\n        <a class=\"nav-link\" routerLink=\"/concept\">\n          <i class=\"fa fa-book\"></i> Concepts</a>\n      </li>\n      <li class=\"nav-item\" *ngIf=\"isUserLoggedIn\" >\n        <a class=\"nav-link\" routerLink=\"/learning\">\n          <i class=\"fa fa-language\"></i> Learnings</a>\n      </li>\n      <!-- <li class=\"nav-item\">\n        <a class=\"nav-link\" (click)=\"SignIn()\" ><i class=\"fa fa-sign-in\"></i> Sign In</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" (click)=\"SignOut()\" ><i class=\"fa fa-sign-out\"></i> Sign Out</a>\n      </li> -->\n    </ul>\n    <form class=\"form-inline my-2 my-lg-0\">\n      <div *ngIf=\"!isUserLoggedIn\" class=\"my-2 my-sm-0\">\n        <i class=\"fa fa-user-circle-o faSpace faWhite\" (click)=\"SignIn()\"> Sign In</i>\n      </div>\n      <div *ngIf=\"isUserLoggedIn\" class=\"my-2 my-sm-0\">\n        <i class=\"fa fa-user-circle faSpace faWhite\" (click)=\"SignOut()\">{{\"  \" + userDisplayName}}</i>\n        <img [src]=\"photoURL\" class=\"margin-right-5px\" height=\"35px\" style=\"border-radius:3px;border:2px solid rgb(0, 0, 0);\" />\n      </div>\n      <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">\n      <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">\n        <i class=\"fa fa-search\"></i> Search</button>\n    </form>\n  </div>\n</nav>"
 
 /***/ }),
 
@@ -857,11 +857,13 @@ var MenuComponent = (function () {
         this.authService = authService;
         this.userDisplayName = "";
         this.isUserLoggedIn = false;
+        this.photoURL = "";
         if (authService.user) {
             authService.user.subscribe(function (user) {
                 if (user) {
                     console.log(user);
                     _this.userDisplayName = user.email;
+                    _this.photoURL = user.photoURL;
                     _this.isUserLoggedIn = true;
                 }
                 else {
@@ -878,6 +880,7 @@ var MenuComponent = (function () {
     MenuComponent.prototype.SignOut = function () {
         this.authService.signOut();
         this.userDisplayName = "";
+        this.photoURL = "";
         this.isUserLoggedIn = false;
     };
     MenuComponent = __decorate([
