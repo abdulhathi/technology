@@ -574,7 +574,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/content/technology/add-technology/add-technology.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<button type=\"button\" class=\"btn btn-link\" data-toggle=\"modal\" data-target=\"#addNewTech\">\n  <i class=\"fa fa-plus\"></i> Add\n</button>\n<br>\n<div class=\"modal fade\" id=\"addNewTech\">\n  <div class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header bg-primary text-white\">\n        <b>Add New Technology</b>\n        <button type=\"button\" class=\"close text-white\" data-dismiss=\"modal\" aria-label=\"Close\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n        <input type=\"text\" [(ngModel)]=\"tech.Name\" placeholder=\"Techology Name\" class=\"form-control\" name=\"name\" />\n        <br>\n        <textarea [(ngModel)]=\"tech.Description\" placeholder=\"Techology Description\" class=\"form-control\" name=\"description\"></textarea>\n      </div>\n      <div class=\"modal-footer\">\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"onSubmit()\">\n          <i class=\"fa fa-plus-square-o\"></i> Add</button>\n      </div>\n    </div>\n  </div>\n</div>"
+module.exports = "<button type=\"button\" class=\"btn btn-link amber darken-3 white-text\" data-toggle=\"modal\" data-target=\"#addNewTech\">\n  <i class=\"fa fa-plus\"></i> Add\n</button>\n\n<br>\n<div class=\"modal fade\" id=\"addNewTech\">\n  <div class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header bg-primary text-white\">\n        <b>Add New Technology</b>\n        <button type=\"button\" class=\"close text-white\" data-dismiss=\"modal\" aria-label=\"Close\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n        <input type=\"text\" [(ngModel)]=\"tech.Name\" placeholder=\"Techology Name\" class=\"form-control\" name=\"name\" />\n        <br>\n        <textarea [(ngModel)]=\"tech.Description\" placeholder=\"Techology Description\" class=\"form-control\" name=\"description\"></textarea>\n      </div>\n      <div class=\"modal-footer\">\n        <button type=\"submit\" class=\"btn btn-primary\" (click)=\"onSubmit()\">\n          <i class=\"fa fa-plus-square-o\"></i> Add</button>\n      </div>\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -695,7 +695,7 @@ var TechnologyComponent = (function () {
     TechnologyComponent.prototype.deleteTechnology = function (event, tech) {
         this.fbTechnologyService.DeleteTechnology(tech);
     };
-    TechnologyComponent.prototype.updateechnology = function (event, tech) {
+    TechnologyComponent.prototype.updateTechnology = function (event, tech) {
         this.fbTechnologyService.UpdateTechnology(tech);
     };
     // GetTechnology()
