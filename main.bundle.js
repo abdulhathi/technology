@@ -121,12 +121,14 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__content_learning_learning_component__ = __webpack_require__("../../../../../src/app/content/learning/learning.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__content_concept_add_concept_add_concept_component__ = __webpack_require__("../../../../../src/app/content/concept/add-concept/add-concept.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__content_home_home_component__ = __webpack_require__("../../../../../src/app/content/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__content_learning_ecmascript_ecmascript_component__ = __webpack_require__("../../../../../src/app/content/learning/ecmascript/ecmascript.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -164,7 +166,8 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_17__content_technology_add_technology_add_technology_component__["a" /* AddTechnologyComponent */],
                 __WEBPACK_IMPORTED_MODULE_18__content_learning_learning_component__["a" /* LearningComponent */],
                 __WEBPACK_IMPORTED_MODULE_19__content_concept_add_concept_add_concept_component__["a" /* AddConceptComponent */],
-                __WEBPACK_IMPORTED_MODULE_20__content_home_home_component__["a" /* HomeComponent */]
+                __WEBPACK_IMPORTED_MODULE_20__content_home_home_component__["a" /* HomeComponent */],
+                __WEBPACK_IMPORTED_MODULE_21__content_learning_ecmascript_ecmascript_component__["a" /* EcmascriptComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -194,6 +197,8 @@ var AppModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__content_concept_concept_component__ = __webpack_require__("../../../../../src/app/content/concept/concept.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__content_learning_learning_component__ = __webpack_require__("../../../../../src/app/content/learning/learning.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__content_home_home_component__ = __webpack_require__("../../../../../src/app/content/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__content_learning_ecmascript_ecmascript_component__ = __webpack_require__("../../../../../src/app/content/learning/ecmascript/ecmascript.component.ts");
+
 
 
 
@@ -203,6 +208,7 @@ var Technology_Routes = [
     { pathMatch: "full", path: "technology", component: __WEBPACK_IMPORTED_MODULE_0__content_technology_technology_component__["a" /* TechnologyComponent */] },
     { pathMatch: "full", path: "concept", component: __WEBPACK_IMPORTED_MODULE_1__content_concept_concept_component__["a" /* ConceptComponent */] },
     { pathMatch: "full", path: "learning", component: __WEBPACK_IMPORTED_MODULE_2__content_learning_learning_component__["a" /* LearningComponent */] },
+    { pathMatch: "full", path: "ecmascript", component: __WEBPACK_IMPORTED_MODULE_4__content_learning_ecmascript_ecmascript_component__["a" /* EcmascriptComponent */] },
 ];
 
 
@@ -486,6 +492,67 @@ var HomeComponent = (function () {
         __metadata("design:paramtypes", [])
     ], HomeComponent);
     return HomeComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/content/learning/ecmascript/ecmascript.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/content/learning/ecmascript/ecmascript.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\n  <h1>Leassion 1 - What is Ecma Script</h1>\n<h3>Ecma means European Computer Manufacturers Assocation. It creates the standard for Javascript language</h3>\n\n<br>\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/content/learning/ecmascript/ecmascript.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EcmascriptComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var EcmascriptComponent = (function () {
+    function EcmascriptComponent() {
+    }
+    EcmascriptComponent.prototype.ngOnInit = function () {
+    };
+    EcmascriptComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-ecmascript',
+            template: __webpack_require__("../../../../../src/app/content/learning/ecmascript/ecmascript.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/content/learning/ecmascript/ecmascript.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], EcmascriptComponent);
+    return EcmascriptComponent;
 }());
 
 
@@ -817,6 +884,13 @@ var FooterComponent = (function () {
 
 /***/ }),
 
+/***/ "../../../../../src/app/menu/menu-custom.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<style>\n    .techmenu {\n        width: 100%;\n        display: block;\n    }\n    .techmenu > ul\n    {\n        width:100%;\n        padding: 10px;\n    }\n    .techmenu > ul > li {\n        display: inline;\n    }\n\n    .techmenu > ul >li>a {\n        padding-left: 20px;\n        padding-right: 20px;\n        padding-top: 15px;\n        padding-bottom: 15px;\n        text-decoration: none;\n    }\n\n    .techBar {\n        float: right;\n        padding: 15px;\n        cursor: pointer;\n       display: none;\n    }\n    .closebtn {\n    position: absolute;\n    top: 0;\n    right: 25px;\n    font-size: 36px;\n    margin-left: 50px;\n    text-decoration: none;\n    color: #fff;\n    display: none;\n}\n\n    @media screen and (max-width: 768px) {\n        /* .techmenu {\n            list-style: none;\n            width: 200px;\n            display: none;\n            height: 100%;\n            z-index: 1;\n        } */\n        .techmenu\n        {\n            height: 100%;\n            width: 200px;\n            position: fixed;\n            z-index: 1;\n            top: 0;\n            left: -200px;\n            background-color: #111;\n            overflow-x: hidden; \n            padding-top: 60px;\n        }\n        .showMenu\n        {\n            /* width:200px; \n            display:none;*/\n           \n            left: 0px;\n            transition: 0.5s;\n        }\n        .hideMenu\n        {\n            /* display:none; */\n            \n            left: -200px;\n            transition: 0.5s;\n        }\n        .closebtn, .techBar\n       {\n           display: block;\n       }\n    }\n</style>\n<nav class=\"bg-primary\" style=\"min-height: 50px;\">\n    <div class=\"techBar\">\n        <i class=\"fa fa-bars text-white\" id=\"menubar\" (click)=\"DisplayMenu()\" ></i>\n    </div>\n   \n    <div id=\"techMenus\" class=\"techmenu bg-primary\" [ngClass]=\"isMenuEnabled ? 'showMenu' : 'hideMenu'\">\n    <!-- [ngClass]=\"isMenuEnabled ? 'showMenu' : 'hideMenu'\" > -->\n    <a href=\"javascript:void(0)\" class=\"closebtn\" (click)=\"DisplayMenu()\">&times;</a>\n        <ul>\n            <li>\n                <a class=\"fa fa-home text-white\" routerLink=\"/\"> Home</a>\n            </li>\n            <li>\n                <a class=\"fa fa-list text-white\" routerLink=\"/technology\"> Technologies</a>\n            </li>\n            <li>\n                <a class=\"fa fa-book text-white\" routerLink=\"/concept\"> Concepts</a>\n            </li>\n            <li>\n                <a class=\"fa fa-language text-white\" routerLink=\"/learning\"> Learnings</a>\n            </li>\n        </ul>\n\n    </div>\n\n\n</nav>"
+
+/***/ }),
+
 /***/ "../../../../../src/app/menu/menu.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -832,13 +906,6 @@ exports.push([module.i, "\n/* nav ul\n{\n    padding: 0 !important;\n    display
 
 /*** EXPORTS FROM exports-loader ***/
 module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/menu/menu.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-primary\">\n  <a class=\"navbar-brand\" routerLink=\"/\">\n    <i class=\"fa fa-laptop\"></i> Technology</a>\n  <div class=\"navbar-toggler\" data-toggle=\"collapse\" data-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\"\n    aria-label=\"Toggle navigation\">\n    <!-- <span class=\"navbar-toggler-icon\"></span>  -->\n    <i class=\"fa fa-bars\" style=\"padding:3px 6px;color:#fff;cursor:pointer;border:1px solid #fff;border-radius:3px;\"></i>\n  </div>\n  <div class=\"collapse navbar-collapse\" id=\"navbarColor01\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item active margin-right-10px\">\n        <a class=\"nav-link\" routerLink=\"/\">\n          <i class=\"fa fa-home\"></i> Home\n          <span class=\"sr-only\">(current)</span>\n        </a>\n      </li>\n      \n      <li class=\"nav-item\" *ngIf=\"isUserLoggedIn\" >\n        <a class=\"nav-link\" routerLink=\"/technology\">\n          <i class=\"fa fa-list\"></i> Technologies</a>\n      </li>\n      <li class=\"nav-item\" *ngIf=\"isUserLoggedIn\" >\n        <a class=\"nav-link\" routerLink=\"/concept\">\n          <i class=\"fa fa-book\"></i> Concepts</a>\n      </li>\n      <li class=\"nav-item\" *ngIf=\"isUserLoggedIn\" >\n        <a class=\"nav-link\" routerLink=\"/learning\">\n          <i class=\"fa fa-language\"></i> Learnings</a>\n      </li>\n      <!-- <li class=\"nav-item\">\n        <a class=\"nav-link\" (click)=\"SignIn()\" ><i class=\"fa fa-sign-in\"></i> Sign In</a>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" (click)=\"SignOut()\" ><i class=\"fa fa-sign-out\"></i> Sign Out</a>\n      </li> -->\n    </ul>\n    <form class=\"form-inline my-2 my-lg-0\">\n      <div *ngIf=\"!isUserLoggedIn\" class=\"my-2 my-sm-0\">\n        <i class=\"fa fa-user-circle-o faSpace faWhite\" (click)=\"SignIn()\"> Sign In</i>\n      </div>\n      <div *ngIf=\"isUserLoggedIn\" class=\"my-2 my-sm-0\">\n        <i class=\"fa fa-user-circle faSpace faWhite\" (click)=\"SignOut()\">{{\"  \" + userDisplayName}}</i>\n        <img [src]=\"photoURL\" class=\"margin-right-5px\" height=\"35px\" style=\"border-radius:3px;border:1px solid #fff;\" />\n      </div>\n      <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\">\n      <button class=\"btn btn-secondary my-2 my-sm-0\" type=\"submit\">\n        <i class=\"fa fa-search\"></i> Search</button>\n    </form>\n  </div>\n</nav>"
 
 /***/ }),
 
@@ -864,6 +931,7 @@ var MenuComponent = (function () {
     function MenuComponent(authService) {
         var _this = this;
         this.authService = authService;
+        this.isMenuEnabled = false;
         this.userDisplayName = "";
         this.isUserLoggedIn = false;
         this.photoURL = "";
@@ -893,10 +961,13 @@ var MenuComponent = (function () {
         this.photoURL = "";
         this.isUserLoggedIn = false;
     };
+    MenuComponent.prototype.DisplayMenu = function () {
+        this.isMenuEnabled = this.isMenuEnabled ? false : true;
+    };
     MenuComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-menu',
-            template: __webpack_require__("../../../../../src/app/menu/menu.component.html"),
+            template: __webpack_require__("../../../../../src/app/menu/menu-custom.component.html"),
             styles: [__webpack_require__("../../../../../src/app/menu/menu.component.css")],
             providers: [__WEBPACK_IMPORTED_MODULE_1__services_auth_service__["a" /* AuthService */]]
         }),
