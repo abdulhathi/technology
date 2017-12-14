@@ -235,7 +235,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/content/concept/add-concept/add-concept.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  add-concept works!\n</p>\n"
+module.exports = "<button type=\"button\" class=\"btn btn-link amber darken-3 white-text\" data-toggle=\"modal\" data-target=\"#addNewConcept\" >\n  <i class=\"fa fa-plus\"></i> Add\n</button>\n\n<br>\n<div class=\"modal fade\" id=\"addNewConcept\">\n  <div class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header bg-primary text-white\">\n        <b><i class=\"fa fa-plus\"></i> Add new question ?</b>\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n          <span aria-hidden=\"true\">&times;</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n          <select class=\"form-control\" id=\"exampleSelect1\" [(ngModel)]=\"newConcept.TechnologyId\" \n          (change)=\"techChange(newConcept.TechnologyId)\" class=\"form-control\" >\n              <option>Select Technology</option>\n              <option *ngFor=\"let tech of technologies\" [ngValue]=\"tech.Id\">{{tech.Name}}</option>\n          </select>\n          <br>\n        <input type=\"text\" [(ngModel)]=\"newConcept.ConceptQuestion.Question\" placeholder=\"Question\" class=\"form-control\" >\n        <br>\n        <textarea [(ngModel)]=\"newConcept.ConceptQuestion.Answer\" placeholder=\"Answer\" \n        class=\"form-control\" ></textarea>\n      </div>\n      <div class=\"modal-footer\">\n        <button class=\"btn btn-primary\" (click)=\"AddConecpt()\" data-dismiss=\"modal\">Add</button>\n        <button class=\"btn btn-secondary\" data-dismiss=\"modal\">Cancel</button>\n      </div>\n    </div>\n  </div>\n</div>\n\n<!-- \n\n<i class=\"fa fa-plus fa-pull-right faSpace\" data-toggle=\"modal\" data-target=\"#addNewConcept\" title=\"Add\"> Add</i>\n<div class=\"modal fade\" id=\"addNewConcept\">\n    <div class=\"modal-dialog\" role=\"document\">\n        <div class=\"modal-content\">\n            <div class=\"modal-header bg-success text-white\">\n                <h5 class=\"modal-title\">\n                    <i class=\"fa fa-plus\"></i>  Add new question ?</h5>\n                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                    <span aria-hidden=\"true\">&times;</span>\n                </button>\n            </div>\n            <div class=\"modal-body\">\n                <input type=\"text\" [(ngModel)]=\"newConcept.ConceptQuestion.Question\" placeholder=\"Question\">\n                <br>\n                <textarea [(ngModel)]=\"newConcept.ConceptQuestion.Answer\" placeholder=\"Answer\"></textarea>\n            </div>\n            <div class=\"modal-footer\">\n                <button class=\"btn btn-primary\" (click)=\"this.fbConceptService.AddConcept(newConcept)\" data-dismiss=\"modal\">Add</button>\n                <button class=\"btn btn-secondary\" data-dismiss=\"modal\">Cancel</button>\n            </div>\n        </div>\n    </div>\n</div> -->"
 
 /***/ }),
 
@@ -245,6 +245,8 @@ module.exports = "<p>\n  add-concept works!\n</p>\n"
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddConceptComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_fb_technology_service__ = __webpack_require__("../../../../../src/app/services/fb-technology.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_fb_concept_service__ = __webpack_require__("../../../../../src/app/services/fb-concept.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -255,10 +257,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var AddConceptComponent = (function () {
-    function AddConceptComponent() {
+    function AddConceptComponent(fbTechnologyService, fbConceptService) {
+        this.fbTechnologyService = fbTechnologyService;
+        this.fbConceptService = fbConceptService;
+        this.newConcept = {
+            ConceptQuestion: {
+                Question: "",
+                Answer: ""
+            }
+        };
     }
     AddConceptComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.fbTechnologyService.getTechnologies().subscribe(function (techs) { return _this.technologies = techs; });
+    };
+    AddConceptComponent.prototype.techChange = function (id) {
+        //alert(id);
+        this.newConcept.TechnologyId = id;
+    };
+    AddConceptComponent.prototype.AddConecpt = function () {
+        if (this.newConcept.TechnologyId != "" && this.newConcept.ConceptQuestion.Question != "" && this.newConcept.ConceptQuestion.Answer != "") {
+            this.fbConceptService.AddConcept(this.newConcept);
+        }
     };
     AddConceptComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -266,7 +289,7 @@ var AddConceptComponent = (function () {
             template: __webpack_require__("../../../../../src/app/content/concept/add-concept/add-concept.component.html"),
             styles: [__webpack_require__("../../../../../src/app/content/concept/add-concept/add-concept.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_fb_technology_service__["a" /* FbTechnologyService */], __WEBPACK_IMPORTED_MODULE_2__services_fb_concept_service__["a" /* FbConceptService */]])
     ], AddConceptComponent);
     return AddConceptComponent;
 }());
@@ -296,7 +319,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/content/concept/concept.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<br>\n<div class=\"container\">\n    <div class=\"form-group\">\n        <label for=\"exampleSelect1\">Select Technology</label>\n        <i class=\"fa fa-plus fa-pull-right faSpace\" data-toggle=\"modal\" data-target=\"#addNewConcept\" title=\"Add\"></i>\n        <select class=\"form-control\" id=\"exampleSelect1\" [(ngModel)]=\"newConcept.TechnologyId\" \n        (change)=\"techChange()\">\n            <option *ngFor=\"let tech of technologies\" [ngValue]=\"tech.Id\">{{tech.Name}}</option>\n        </select>\n    </div>\n    <div class=\"modal fade\" id=\"addNewConcept\">\n        <div class=\"modal-dialog\" role=\"document\">\n            <div class=\"modal-content\">\n                <div class=\"modal-header bg-success text-white\">\n                    <h5 class=\"modal-title\">\n                        <i class=\"fa fa-plus\"></i>  Add new question ?</h5>\n                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                        <span aria-hidden=\"true\">&times;</span>\n                    </button>\n                </div>\n                <div class=\"modal-body\">\n                    <textarea [(ngModel)]=\"newConcept.ConceptQuestion.Question\" placeholder=\"Question\"></textarea>\n                    <br>\n                    <textarea [(ngModel)]=\"newConcept.ConceptQuestion.Answer\" placeholder=\"Answer\"></textarea>\n                </div>\n                <div class=\"modal-footer\">\n                    <button class=\"btn btn-primary\" (click)=\"this.fbConceptService.AddConcept(newConcept)\" data-dismiss=\"modal\">Add</button>\n                    <button class=\"btn btn-secondary\" data-dismiss=\"modal\">Cancel</button>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <div *ngFor=\"let concept of concepts; let idx = index\" class=\"card text-white bg-success mb-3\" style=\"max-width: 100%;\">\n        <div class=\"card-header text-middle\">{{idx + 1 +'. '+ concept.ConceptQuestion.Question}}\n            <span>\n            <i class=\"fa fa-minus fa-pull-right faSpace\" (click)=\"this.fbConceptService.DeleteConcept(concept)\" title=\"Delete\"></i>\n            <i class=\"fa fa-pencil fa-pull-right faSpace\" (click)=\"editConceptItem(concept)\" title=\"Edit\"></i>\n            <i class=\"fa fa-plus fa-pull-right faSpace\" data-toggle=\"modal\" data-target=\"#addNewConcept\" title=\"Add\"></i>\n        </span>\n        </div>\n        <div class=\"card-body\">\n            <!-- <h4 class=\"card-title\">{{concept.ConceptQuestion.Question}}</h4> -->\n            <p class=\"card-text\">{{concept.ConceptQuestion.Answer}}</p>\n            <div *ngIf=\"isEditConcept == true && editConcept.ConceptQuestion.Question == concept.ConceptQuestion.Question\">\n                <textarea name=\"conceptQuestion\" [(ngModel)]=\"concept.ConceptQuestion.Question\"></textarea>\n                <textarea name=\"conceptQuestion\" [(ngModel)]=\"concept.ConceptQuestion.Answer\"></textarea>\n                <br>\n                <button class=\"btn btn-warning\" (click)=\"updateConceptItem(concept)\">Update</button>\n                <button class=\"btn btn-secondary\" (click)=\"cancelConceptItem(concept)\">Cancel</button>\n            </div>\n        </div>\n    </div>\n</div>"
+module.exports = "<div class=\"container\">\n    <br>\n    <app-add-concept></app-add-concept>\n    <div class=\"form-group\">\n        <!-- <label for=\"exampleSelect1\">Select Technology</label> -->\n        <select class=\"form-control\" id=\"exampleSelect1\" [(ngModel)]=\"this.newConcept.TechnologyId\" (change)=\"techChange()\">\n            <option>Select Technology</option>\n            <option *ngFor=\"let tech of technologies\" [ngValue]=\"tech.Id\">{{tech.Name}}</option>\n        </select>\n    </div>\n\n\n    <!-- <div *ngFor=\"let concept of concepts; let idx = index\" class=\"card text-white bg-success mb-3\" style=\"max-width: 100%;\">\n        <div class=\"card-header text-middle\">{{idx + 1 +'. '+ concept.ConceptQuestion.Question}}\n            <span>\n                <i class=\"fa fa-minus fa-pull-right faSpace\" (click)=\"this.fbConceptService.DeleteConcept(concept)\" title=\"Delete\"></i>\n                <i class=\"fa fa-pencil fa-pull-right faSpace\" (click)=\"editConceptItem(concept)\" title=\"Edit\"></i>\n                <i class=\"fa fa-plus fa-pull-right faSpace\" data-toggle=\"modal\" data-target=\"#addNewConcept\" title=\"Add\"></i>\n            </span>\n        </div>\n        <div class=\"card-body\">\n            \n            <p class=\"card-text\">{{concept.ConceptQuestion.Answer}}</p>\n            <div *ngIf=\"isEditConcept == true && editConcept.ConceptQuestion.Question == concept.ConceptQuestion.Question\">\n                <textarea name=\"conceptQuestion\" [(ngModel)]=\"concept.ConceptQuestion.Question\"></textarea>\n                <textarea name=\"conceptQuestion\" [(ngModel)]=\"concept.ConceptQuestion.Answer\"></textarea>\n                <br>\n                <button class=\"btn btn-warning\" (click)=\"updateConceptItem(concept)\">Update</button>\n                <button class=\"btn btn-secondary\" (click)=\"cancelConceptItem(concept)\">Cancel</button>\n            </div>\n        </div>\n    </div> -->\n\n    <div class=\"list-group\">\n        <div class=\"list-group-item list-group-item-action flex-column align-items-start\"\n        *ngFor=\"let concept of concepts; let idx = index\"\n        (mousedown)=\"onSelected(idx)\"\n        [ngClass]=\"this.selectedId == idx && this.isSelected ? 'active' : ''\">\n            <div class=\"d-flex w-100 justify-content-between\">\n                <h5 class=\"mb-1\">{{idx + 1 +'. '+ concept.ConceptQuestion.Question}}</h5>\n                <small>\n                    <i class=\"fa fa-trash fa-pull-right faSpace\" (click)=\"this.fbConceptService.DeleteConcept(concept)\" title=\"Delete\"></i>\n                    <i class=\"fa fa-pencil fa-pull-right faSpace\" (click)=\"editConceptItem(concept)\" title=\"Edit\"></i>\n                </small>\n            </div>\n            <p class=\"mb-1\">{{concept.ConceptQuestion.Answer}}</p>\n            <small>\n                <div *ngIf=\"isEditConcept == true && editConcept.ConceptQuestion.Question == concept.ConceptQuestion.Question\">\n                    <textarea name=\"conceptQuestion\" [(ngModel)]=\"concept.ConceptQuestion.Question\"></textarea>\n                    <textarea name=\"conceptQuestion\" [(ngModel)]=\"concept.ConceptQuestion.Answer\"></textarea>\n                    <br>\n                    <button class=\"btn btn-warning\" (click)=\"updateConceptItem(concept)\">Update</button>\n                    <button class=\"btn btn-secondary\" (click)=\"cancelConceptItem(concept)\">Cancel</button>\n                </div>\n            </small>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -332,12 +355,13 @@ var ConceptComponent = (function () {
         };
         this.isEditConcept = false;
         this.editConcept = {};
+        this.isSelected = false;
     }
     ConceptComponent.prototype.ngOnInit = function () {
         var _this = this;
         //this.fbConceptService.GetConcepts().subscribe(concetList => this.concepts = concetList);
         this.fbTechnologyService.getTechnologies().subscribe(function (techs) { return _this.technologies = techs; });
-        this.fbConceptService.GetConcepts().subscribe(function (conceptList) { return _this.concepts = conceptList; });
+        //this.fbConceptService.GetConcepts().subscribe(conceptList => this.concepts = conceptList);
     };
     ConceptComponent.prototype.editConceptItem = function (concept) {
         this.isEditConcept = true;
@@ -351,13 +375,19 @@ var ConceptComponent = (function () {
         this.isEditConcept = false;
     };
     ConceptComponent.prototype.techChange = function () {
+        var _this = this;
+        //alert(this.newConcept.TechnologyId);
         this.concepts = null;
-        console.log(this.newConcept.TechnologyId);
-        var list = this.fbConceptService.GetConcepts().subscribe(function (conceptList) {
-            return conceptList.filter(function (c) { return (c.TechnologyId = 'qIbhJa7U4V4pkxMxywKj'); });
+        //console.log(this.newConcept.TechnologyId);
+        this.fbConceptService.GetConcepts().subscribe(function (conceptList) {
+            _this.concepts = conceptList.filter(function (c) { return (c.TechnologyId == _this.newConcept.TechnologyId); });
         });
-        console.log(list);
+        // console.log(list);
         //.subscribe(concetList => this.concepts = concetList.filter(c => c.TechnologyId == this.newConcept.TechnologyId));
+    };
+    ConceptComponent.prototype.onSelected = function (idx) {
+        this.selectedId = idx;
+        this.isSelected = true;
     };
     ConceptComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -519,7 +549,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/content/learning/ecmascript/ecmascript.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <h1>Leassion 1 - What is Ecma Script</h1>\n<h3>Ecma means European Computer Manufacturers Assocation. It creates the standard for Javascript language</h3>\n\n<br>\n</div>"
+module.exports = "<div class=\"container\">\n  <br>\n  <h3>Leassion 1 - What is Ecma Script</h3>\n  Ecma means European Computer Manufacturers Assocation. It creates the standard for Javascript language\n  <br>\n  <h3>Lession 2 - Let and Var keywords</h3>\n  let values will be changed outside the scope \n  But Var values vont change.\n  <br>\n  <h3>Lession 4 - Spread operator values</h3>\n  Hi How are you in the array.\n  [HI],[How],[are],[you] after used spread.\n</div>"
 
 /***/ }),
 
@@ -541,6 +571,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var EcmascriptComponent = (function () {
     function EcmascriptComponent() {
+        this.spreadResult = "";
     }
     EcmascriptComponent.prototype.ngOnInit = function () {
     };
@@ -899,7 +930,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, " .menuRoot\n    {\n        min-height: 50px;\n        \n    }\n    .techBar {\n        float: right;\n        padding: 7px;\n        cursor: pointer;\n        display: none;\n        font-size: x-large;\n        margin-right: 10px;\n    }\n    .techmenu {\n        display: block;\n        background-color:inherit;\n    }\n    .techLogo {\n        float: left;\n        margin-left: -40px;\n        padding: 10px;\n        font-size: large;\n        text-decoration: none;\n        font-weight: bold;\n    }\n    .techAuth\n    {\n        float: right;\n        padding:12px;\n        cursor: pointer;\n    }\n    .techmenu>ul\n    {\n        padding-left:10px;\n    }\n    .techmenu>ul>li{\n        display: -webkit-inline-box;\n        display: -ms-inline-flexbox;\n        display: inline-flex;\n    }\n\n    .techmenu>ul>li>a\n    {\n        padding: 10px;\n        text-decoration: none;\n        cursor: pointer;\n    }\n\n    .closebtn {\n        position: absolute;\n        top: 0;\n        right: 25px;\n        font-size: 36px;\n        margin-left: 50px;\n        text-decoration: none;\n        color: #fff;\n        display: none;\n    }\n\n    @media screen and (max-width: 768px) {\n        .techmenu {\n            height: 100%;\n            width: 200px;\n            position: fixed;\n            z-index: 1;\n            top: 0;\n            left: -200px;\n            overflow-x: hidden;\n            padding-top: 60px;\n        }\n        .showMenu {\n            \n            left: 0px;\n            transition: 0.5s;\n        }\n        .hideMenu {\n            \n            left: -200px;\n            transition: 0.5s;\n        }\n        .closebtn,\n        .techBar {\n            display: block;\n        }\n    }", ""]);
+exports.push([module.i, " .menuRoot\n    {\n        min-height: 50px;\n        \n    }\n    .techBar {\n        float: right;\n        padding: 7px;\n        cursor: pointer;\n        display: none;\n        font-size: x-large;\n        margin-right: 10px;\n    }\n    .techmenu {\n        display: block;\n        background-color:inherit;\n    }\n    .techLogo {\n        float: left;\n        margin-left: -40px;\n        padding: 10px;\n        font-size: large;\n        text-decoration: none;\n        font-weight: bold;\n    }\n    .techLogo>ul>li>a\n    {\n        text-decoration: none;\n    }\n    .techAuth\n    {\n        float: right;\n        padding:12px;\n        cursor: pointer;\n    }\n    .techmenu>ul\n    {\n        padding-left:10px;\n    }\n    .techmenu>ul>li{\n        display: -webkit-inline-box;\n        display: -ms-inline-flexbox;\n        display: inline-flex;\n    }\n\n    .techmenu>ul>li>a\n    {\n        padding: 10px;\n        text-decoration: none;\n        cursor: pointer;\n    }\n\n    .closebtn {\n        position: absolute;\n        top: 0;\n        right: 25px;\n        font-size: 36px;\n        margin-left: 50px;\n        text-decoration: none;\n        color: #fff;\n        display: none;\n    }\n\n    @media screen and (max-width: 768px) {\n        .techmenu {\n            height: 100%;\n            width: 200px;\n            position: fixed;\n            z-index: 1;\n            top: 0;\n            left: -200px;\n            overflow-x: hidden;\n            padding-top: 60px;\n        }\n        .showMenu {\n            \n            left: 0px;\n            transition: 0.5s;\n        }\n        .hideMenu {\n            \n            left: -200px;\n            transition: 0.5s;\n        }\n        .closebtn,\n        .techBar {\n            display: block;\n        }\n    }", ""]);
 
 // exports
 
