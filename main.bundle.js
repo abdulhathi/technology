@@ -177,7 +177,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_6_angularfire2_firestore__["b" /* AngularFirestoreModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_17__app_route__["a" /* Technology_Routes */]),
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_common_http__["a" /* HttpClientModule */],
                 __WEBPACK_IMPORTED_MODULE_9_angular_froala_wysiwyg__["a" /* FroalaEditorModule */].forRoot(), __WEBPACK_IMPORTED_MODULE_9_angular_froala_wysiwyg__["b" /* FroalaViewModule */].forRoot()
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_8_angularfire2_auth__["a" /* AngularFireAuth */]],
@@ -744,7 +744,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/content/technology/technology.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <br>\n  \n  <!-- <table class=\"table table-striped table-hover table-bordered\">\n    <thead class=\"thead-dark\">\n      <tr>\n        <th>Id</th>\n        <th>Name</th>\n        <th>Description</th>\n        <th>Edit</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let technology of technologies;let idx = index\" (dblclick)=\"deleteTechnology($event, technology)\">\n        <td>{{idx + 1}}</td>\n        <td>{{technology.Name}}</td>\n        <td>{{technology.Description}}</td>\n        <td>\n          <button class=\"btn btn-link fa fa-pencil\" data-toggle=\"modal\" [attr.data-target]=\"'#'+technology.Id + '_myModel'\"> Edit</button>\n        </td>\n      </tr>\n    </tbody>\n  </table> -->\n  <h2 style=\"display:inline-block;\">Technologies</h2>\n  <app-add-technology style=\"float:right;\"></app-add-technology>\n  <ul class=\"list-group font-size-20px\">\n    <li *ngFor=\"let technology of technologies;let idx = index\" (dblclick)=\"deleteTechnology($event, technology)\" class=\"list-group-item d-flex justify-content-between align-items-center\">\n      {{idx + 1}}. {{technology.Name}}\n     \n      <span class=\"badge\">\n        <span class=\"badge-primary badge-pill\">14</span>\n        <i class=\"fa fa-pencil text-primary\" style=\"padding-left:5px;\" data-toggle=\"modal\" [attr.data-target]=\"'#'+technology.Id + '_myModel'\"></i>\n      </span>\n      \n      <div class=\"modal fade\" id=\"{{technology.Id + '_myModel'}}\">\n        <div class=\"modal-dialog\" role=\"document\">\n          <div class=\"modal-content\">\n            <div class=\"modal-header\">\n              <h5 class=\"modal-title\">\n                <i class=\"fa fa-file-text\"></i> {{'Edit ' + technology.Name + ' technology'}}</h5>\n              <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n              </button>\n            </div>\n            <div class=\"modal-body\">\n              <div>\n                <input type=\"text\" [(ngModel)]=\"technology.Name\" placeholder=\"Techology Name\" class=\"form-control\" name=\"name\" />\n              </div>\n              <br>\n              <div>\n                <input type=\"text\" [(ngModel)]=\"technology.Description\" placeholder=\"Techology Description\" class=\"form-control\" name=\"description\" />\n              </div>\n            </div>\n            <div class=\"modal-footer\">\n              <button type=\"button\" class=\"btn btn-warning\" (click)=\"updateTechnology($event, technology)\" data-dismiss=\"modal\">\n                <i class=\"fa fa-pencil-square-o\"></i> Update</button>\n              <button type=\"button\" class=\"btn btn-danger\" (click)=\"deleteTechnology($event, technology)\" data-dismiss=\"modal\">\n                <i class=\"fa fa-trash\"></i> Delete</button>\n              <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">\n                <i class=\"fa fa-window-close\"></i> Close</button>\n            </div>\n          </div>\n        </div>\n      </div>\n    </li>\n  </ul>\n\n\n</div>"
+module.exports = "<div class=\"container\">\n  <br>\n  \n  <!-- <table class=\"table table-striped table-hover table-bordered\">\n    <thead class=\"thead-dark\">\n      <tr>\n        <th>Id</th>\n        <th>Name</th>\n        <th>Description</th>\n        <th>Edit</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let technology of technologies;let idx = index\" (dblclick)=\"deleteTechnology($event, technology)\">\n        <td>{{idx + 1}}</td>\n        <td>{{technology.Name}}</td>\n        <td>{{technology.Description}}</td>\n        <td>\n          <button class=\"btn btn-link fa fa-pencil\" data-toggle=\"modal\" [attr.data-target]=\"'#'+technology.Id + '_myModel'\"> Edit</button>\n        </td>\n      </tr>\n    </tbody>\n  </table> -->\n  <h2 style=\"display:inline-block;\">Technologies</h2>\n  <app-add-technology style=\"float:right;\"></app-add-technology>\n  <ul class=\"list-group font-size-20px\">\n    <li *ngFor=\"let technology of technologies;let idx = index\" (dblclick)=\"deleteTechnology($event, technology)\" class=\"list-group-item d-flex justify-content-between align-items-center\"\n    >\n      <a routerLink=\"/concept\">{{idx + 1}}. {{technology.Name}}</a> \n      <span class=\"badge\">\n        <span class=\"badge-primary badge-pill\">{{technology.NoOfConcepts}}</span>\n        <i class=\"fa fa-pencil text-primary\" style=\"padding-left:5px;\" data-toggle=\"modal\" [attr.data-target]=\"'#'+technology.Id + '_myModel'\"></i>\n      </span>\n      \n      <div class=\"modal fade\" id=\"{{technology.Id + '_myModel'}}\">\n        <div class=\"modal-dialog\" role=\"document\">\n          <div class=\"modal-content\">\n            <div class=\"modal-header\">\n              <h5 class=\"modal-title\">\n                <i class=\"fa fa-file-text\"></i> {{'Edit ' + technology.Name + ' technology'}}</h5>\n              <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n              </button>\n            </div>\n            <div class=\"modal-body\">\n              <div>\n                <input type=\"text\" [(ngModel)]=\"technology.Name\" placeholder=\"Techology Name\" class=\"form-control\" name=\"name\" />\n              </div>\n              <br>\n              <div>\n                <input type=\"text\" [(ngModel)]=\"technology.Description\" placeholder=\"Techology Description\" class=\"form-control\" name=\"description\" />\n              </div>\n            </div>\n            <div class=\"modal-footer\">\n              <button type=\"button\" class=\"btn btn-warning\" (click)=\"updateTechnology($event, technology)\" data-dismiss=\"modal\">\n                <i class=\"fa fa-pencil-square-o\"></i> Update</button>\n              <button type=\"button\" class=\"btn btn-danger\" (click)=\"deleteTechnology($event, technology)\" data-dismiss=\"modal\">\n                <i class=\"fa fa-trash\"></i> Delete</button>\n              <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">\n                <i class=\"fa fa-window-close\"></i> Close</button>\n            </div>\n          </div>\n        </div>\n      </div>\n    </li>\n  </ul>\n\n\n</div>"
 
 /***/ }),
 
@@ -754,8 +754,8 @@ module.exports = "<div class=\"container\">\n  <br>\n  \n  <!-- <table class=\"t
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TechnologyComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__technology_service__ = __webpack_require__("../../../../../src/app/technology.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_fb_technology_service__ = __webpack_require__("../../../../../src/app/services/fb-technology.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_fb_technology_service__ = __webpack_require__("../../../../../src/app/services/fb-technology.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_fb_concept_service__ = __webpack_require__("../../../../../src/app/services/fb-concept.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -770,8 +770,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 // declare var firebase: any;
 var TechnologyComponent = (function () {
-    function TechnologyComponent(technologyService, fbTechnologyService) {
-        this.technologyService = technologyService;
+    function TechnologyComponent(fbConceptService, fbTechnologyService) {
+        this.fbConceptService = fbConceptService;
         this.fbTechnologyService = fbTechnologyService;
         //technologyName = "";
         this.output = "";
@@ -837,10 +837,10 @@ var TechnologyComponent = (function () {
             selector: 'app-technology',
             template: __webpack_require__("../../../../../src/app/content/technology/technology.component.html"),
             styles: [__webpack_require__("../../../../../src/app/content/technology/technology.component.css")],
-            providers: [__WEBPACK_IMPORTED_MODULE_1__technology_service__["a" /* TechnologyService */], __WEBPACK_IMPORTED_MODULE_2__services_fb_technology_service__["a" /* FbTechnologyService */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_2__services_fb_concept_service__["a" /* FbConceptService */], __WEBPACK_IMPORTED_MODULE_1__services_fb_technology_service__["a" /* FbTechnologyService */]]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__technology_service__["a" /* TechnologyService */],
-            __WEBPACK_IMPORTED_MODULE_2__services_fb_technology_service__["a" /* FbTechnologyService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_fb_concept_service__["a" /* FbConceptService */],
+            __WEBPACK_IMPORTED_MODULE_1__services_fb_technology_service__["a" /* FbTechnologyService */]])
     ], TechnologyComponent);
     return TechnologyComponent;
 }());
@@ -1167,6 +1167,13 @@ var FbConceptService = (function () {
         });
         return this.concepts;
     };
+    FbConceptService.prototype.GetConceptsCountByTechnology = function (technologyId) {
+        //alert(technologyId);
+        this.conceptCollection = this.afs.collection("Concept", function (ref) { return ref.where('TechnologyId', '==', technologyId); });
+        return this.conceptCollection.valueChanges();
+        // console.log(conceptCount);
+        // return conceptCount;
+    };
     FbConceptService.prototype.AddConcept = function (concept) {
         this.conceptCollection.add(concept);
     };
@@ -1196,6 +1203,7 @@ var FbConceptService = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FbTechnologyService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_firestore__ = __webpack_require__("../../../../angularfire2/firestore/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fb_concept_service__ = __webpack_require__("../../../../../src/app/services/fb-concept.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1207,14 +1215,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var FbTechnologyService = (function () {
-    function FbTechnologyService(afs) {
+    function FbTechnologyService(afs, fbc) {
         this.afs = afs;
+        this.fbc = fbc;
         this.technologyCollection = this.afs.collection("Technology", function (ref) { return ref.orderBy('Name', 'asc'); });
         this.technologies = this.technologyCollection.snapshotChanges().map(function (changes) {
             return changes.map(function (a) {
                 var data = a.payload.doc.data();
                 data.Id = a.payload.doc.id;
+                fbc.GetConceptsCountByTechnology(data.Id).subscribe(function (d) {
+                    data.NoOfConcepts = d.length;
+                });
+                ;
                 return data;
             });
         });
@@ -1235,59 +1249,9 @@ var FbTechnologyService = (function () {
     };
     FbTechnologyService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_firestore__["a" /* AngularFirestore */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_firestore__["a" /* AngularFirestore */], __WEBPACK_IMPORTED_MODULE_2__fb_concept_service__["a" /* FbConceptService */]])
     ], FbTechnologyService);
     return FbTechnologyService;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/technology.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TechnologyService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operators__ = __webpack_require__("../../../../rxjs/_esm5/operators.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var httpOptions = {
-    headers: new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["c" /* HttpHeaders */]({ 'Content-Type': 'application/json' })
-};
-var TechnologyService = (function () {
-    function TechnologyService(http) {
-        this.http = http;
-        this.technologyURL = "http://192.168.1.100:97/api/Technologies";
-    }
-    TechnologyService.prototype.CreateTechnology = function (technology) {
-        return this.http.post(this.technologyURL, technology, httpOptions)
-            .pipe(Object(__WEBPACK_IMPORTED_MODULE_2_rxjs_operators__["a" /* tap */])(function (tech) { return console.log("Added new Item Id"); }));
-    };
-    TechnologyService.prototype.ReadTechnologies = function () {
-        return this.http.get(this.technologyURL).pipe(Object(__WEBPACK_IMPORTED_MODULE_2_rxjs_operators__["a" /* tap */])(function (technologies) { return console.log("Technologies Fetched"); }));
-    };
-    TechnologyService.prototype.DeleteTechnology = function (id) {
-        //alert(this.technologyURL+"/"+ id)
-        return this.http.delete(this.technologyURL + "/" + id).pipe(Object(__WEBPACK_IMPORTED_MODULE_2_rxjs_operators__["a" /* tap */])(function (tech) { return console.log("Technology Deleted Id=" + tech.Id); }));
-    };
-    TechnologyService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
-    ], TechnologyService);
-    return TechnologyService;
 }());
 
 
